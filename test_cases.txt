@@ -1,0 +1,10 @@
+Test Suit for fakestoreapi.com:
+
+NOTES: 
+- fakestoreapi does not support any changes in the database. Any users/products/carts added will not stay in the database, any changes need to be made using a user login with the users already in the database.
+- the documentation dosn't show any response information, some can be found in the Github repository (https://github.com/keikaavousi/fake-store-api) even though it's not complete.
+
+Test case 1: Get all products
+Test case 2: Get products by id
+Test case 3: Get products by inexistent id
+Test case 4: 

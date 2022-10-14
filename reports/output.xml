@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221014 14:06:25.676" rpa="false" schemaversion="3">
+<suite id="s1" name="Initial Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\initial_tests.robot">
+<test id="s1-t1" name="Test Case 3: Get Product By Id" line="19">
+<kw name="Iniciate Session">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>fakestoreapi</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221014 14:06:25.825" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:25.825"/>
+</kw>
+<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:25.825"/>
+</kw>
+<kw name="GET Endpoint /products By Id">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakestoreapi</arg>
+<arg>/products/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221014 14:06:26.570" level="INFO">GET Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221014 14:06:26.570" level="INFO">GET Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 14 Oct 2022 17:06:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=16LiFZRZ4getfPUqBGTzh6ORuxE9gv1pgjebX5ww3hcH267ZAMZBNsMXL5Yk7sQT4iVHiC7IrGaZBxvJjXVtBHq8ozwygbIzNqRsTxlUdAg9qWkgw4f2%2F%2BMJ3yky22mMeMMv"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75a1e7e06bae6b00-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+ </msg>
+<msg timestamp="20221014 14:06:26.571" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221014 14:06:25.826" endtime="20221014 14:06:26.571"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221014 14:06:26.571" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221014 14:06:26.571" endtime="20221014 14:06:26.571"/>
+</kw>
+<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:26.572"/>
+</kw>
+<kw name="Log Response Message">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221014 14:06:26.573" endtime="20221014 14:06:26.573"/>
+</kw>
+<status status="PASS" starttime="20221014 14:06:26.573" endtime="20221014 14:06:26.573"/>
+</kw>
+<tag>GET_PRODUCT_BY_ID</tag>
+<status status="PASS" starttime="20221014 14:06:25.824" endtime="20221014 14:06:26.574"/>
+</test>
+<status status="PASS" starttime="20221014 14:06:25.678" endtime="20221014 14:06:26.575"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">GET_PRODUCT_BY_ID</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Initial Tests">Initial Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

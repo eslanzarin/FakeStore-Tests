@@ -1,12 +1,10 @@
-
-
 *** Settings ***
-
-
-*** Variables ***
+Library        RequestsLibrary
+Library        Collections
 
 
 *** Test Cases ***
 
 
 *** Keywords ***
+
