@@ -1,10 +1,64 @@
 Test Suit for fakestoreapi.com:
 
 NOTES: 
-- fakestoreapi does not support any changes in the database. Any users/products/carts added will not stay in the database, any changes need to be made using a user login with the users already in the database.
+- fakestoreapi does not support any changes in the database. Any users/products/carts added will not stay in the database.
 - the documentation dosn't show any response information, some can be found in the Github repository (https://github.com/keikaavousi/fake-store-api) even though it's not complete.
+- to login use the users already in the database, no new users will be added to the database
+- PUT method is supposed to update a object and if it doesn't exist, create a new one, PATCH only updates the object
 
 Test case 1: Get all products
 Test case 2: Get products by id
 Test case 3: Get products by inexistent id
-Test case 4: 
+Test case 4: Limit results of products with valid numbers
+Test case 5: Limit results of products with invalid number (more than the total number of products)
+Test case 6: Limit results of products with negative number
+Test case 7: Sort results of products descending
+Test case 8: Sort results of products ascending
+Test case 9: Sort results of products with invalid word
+Test case 10: Get all categories
+Test case 11: Get all products in a specific category
+Test case 12: Get all products in an inexistent category
+Test case 13: Get all products in a specific category limiting the number of results
+Test case 14: Get all products in a specific category ascending
+Test case 15: Get all products in a specific category descending
+Test case 16: Get all products in a specific category limiting the number of results ascending
+Test case 17: Get all products in a specific category limiting the number of results descending
+Test case 18: Get all products in a specific category with invalid number ascending
+Test case 19: Get all products in a specific category with invalid number descending
+Test case 20: Add a new produc with valid information
+Test case 21: Add a new product with same title 
+Test case 22: Add a new product with blank title space
+Test case 23: Add a new product with blank price space
+Test case 24: Add a new product with negative price
+Test case 25: Add a new product with invalid price type (string)
+Test case 26: Add a new product with blank description space
+Test case 27: Add a new produc with invalid image href
+Test case 28: Add a new product with blank image space
+Test case 29: Add a new product in an existing category
+Test case 30: Add a new product in an inexisting category 
+Test case 31: Add a new product with blank category space
+Test case 32: Update a product with valid information using PUT method
+Test case 33: Update a product with valid information using PATCH method
+Test case 34: Update a product with blank title space using PUT method
+Test case 35: Update a product with blank price space using PUT method
+Test case 36: Update a product with blank description space using PUT method
+Test case 37: Update a product with blank image space using PUT method
+Test case 38: Update a product with blank category space using PUT method
+Test case 39: Update a product with blank title space using PATCH method
+Test case 40: Update a product with blank price space using PATCH method
+Test case 41: Update a product with blank description space using PATCH method
+Test case 42: Update a product with blank image space using PATCH method
+Test case 43: Update a product with blank category space using PATCH method
+Test case 44: Update an inexistent product with PUT method
+Test case 45: Update an inexistent product with PATCH method
+Test case 46: Delete product with valid id
+Test case 47: Delete product with invalid invalid
+Test case 48: Get all carts 
+Test case 49: Get specific cart with valid id 
+Test case 50: Get specific cart with invalid id
+Test case 51: Limit results of carts with valid numbers
+Test case 52: Limit results of products with invalid number (more than the total number of products)
+Test case 53: Limit results of products with negative number
+Test case 54: Sort results of carts descending
+Test case 55: Sort results of carts ascending
+Test case 56: Sort results of carts with invalid word
