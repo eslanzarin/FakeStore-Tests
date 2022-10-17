@@ -74,4 +74,13 @@ Test case 65: Get all carts with valid date range limiting the number of results
 Test case 66: Get all carts with valid date range limiting the number of results descending
 Test case 67: Get all carts with valid date range limiting the number of results with invalid number ascending
 Test case 68: Get all carts with valid date range limiting the number of results with invalid number descending
-Test case 69: 
+Test case 69: Get all carts with invalid end date limiting the number of results ascending
+Test case 70: Get all carts with invalid start date limiting the number of results ascending
+Test case 71: Get all carts with invalid end date limiting the number of results descending
+Test case 72: Get all carts with invalid start date limiting the number of results descending
+Test case 73: Get all carts from specific user
+Test case 74: Get all carts from inexistent user
+Test case 75: Get all carts from specific user sorting by valid date range
+Test case 76: Get all carts from specific user sorting by valid date range with surely no carts to return
+Test case 77: Get all carts from specific user sorting by date range with invalid start date
+Test case 78: Get all carts from specific user sorting by date range with invalid end date
