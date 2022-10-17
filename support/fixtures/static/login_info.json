@@ -1,0 +1,18 @@
+{
+    "valid_user":{
+        "username": "johnd",
+        "password": "m38rmF$"
+    },
+    "inexistent_user":{
+        "username": "NotInDatabase",
+        "password": "DoNotExist"
+    },
+    "noUsername_user": {
+        "username": "",
+        "password": "DoNotExist"
+    },
+    "noPassword_user": {
+        "username": "johnd",
+        "password": ""
+    }
+}

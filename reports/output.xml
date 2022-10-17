@@ -1,66 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221014 14:06:25.676" rpa="false" schemaversion="3">
-<suite id="s1" name="Initial Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\initial_tests.robot">
-<test id="s1-t1" name="Test Case 3: Get Product By Id" line="19">
-<kw name="Iniciate Session">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221017 16:04:39.127" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\login_tests.robot">
+<test id="s1-t1" name="Test Case: POST Login Blank Password Space" line="23">
+<kw name="Iniciate Session" library="base">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221014 14:06:25.825" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:25.825"/>
+<msg timestamp="20221017 16:04:39.277" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221017 16:04:39.276" endtime="20221017 16:04:39.277"/>
 </kw>
-<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:25.825"/>
+<status status="PASS" starttime="20221017 16:04:39.276" endtime="20221017 16:04:39.277"/>
 </kw>
-<kw name="GET Endpoint /products By Id">
-<kw name="GET On Session" library="RequestsLibrary">
+<kw name="Import Static Blank Password Info" library="login_keywords">
+<kw name="Import Static Info" library="common">
+<var>${json}</var>
+<arg>login_info.json</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${json_archive}</var>
+<arg>./support/fixtures/static/${json_archive_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20221017 16:04:39.278" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\static\login_info.json"&gt;C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\static\login_info.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221017 16:04:39.278" level="INFO">${json_archive} = {
+    "valid_user":{
+        "username": "johnd",
+        "password": "m38rmF$"
+    },
+    "inexistent_user":{
+        "username": "NotInDatabase",
+        "password": "DoNotExist"
+    },
+    "noUsern...</msg>
+<status status="PASS" starttime="20221017 16:04:39.278" endtime="20221017 16:04:39.278"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${data}</var>
+<arg>json.loads('''${json_archive}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221017 16:04:39.280" level="INFO">${data} = {'valid_user': {'username': 'johnd', 'password': 'm38rmF$'}, 'inexistent_user': {'username': 'NotInDatabase', 'password': 'DoNotExist'}, 'noUsername_user': {'username': '', 'password': 'DoNotExist'}, ...</msg>
+<status status="PASS" starttime="20221017 16:04:39.278" endtime="20221017 16:04:39.280"/>
+</kw>
+<msg timestamp="20221017 16:04:39.280" level="INFO">${json} = {'valid_user': {'username': 'johnd', 'password': 'm38rmF$'}, 'inexistent_user': {'username': 'NotInDatabase', 'password': 'DoNotExist'}, 'noUsername_user': {'username': '', 'password': 'DoNotExist'}, ...</msg>
+<status status="PASS" starttime="20221017 16:04:39.278" endtime="20221017 16:04:39.280"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${payload}</var>
+<arg>${json["noPassword_user"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221017 16:04:39.281" level="INFO">${payload} = {'username': 'johnd', 'password': ''}</msg>
+<status status="PASS" starttime="20221017 16:04:39.281" endtime="20221017 16:04:39.281"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221017 16:04:39.281" level="INFO">${payload} = {'username': 'johnd', 'password': ''}</msg>
+<status status="PASS" starttime="20221017 16:04:39.281" endtime="20221017 16:04:39.281"/>
+</kw>
+<status status="PASS" starttime="20221017 16:04:39.277" endtime="20221017 16:04:39.281"/>
+</kw>
+<kw name="Login POST /login" library="login_keywords">
+<kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>fakestoreapi</arg>
-<arg>/products/1</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221014 14:06:26.570" level="INFO">GET Request : url=https://fakestoreapi.com/products/1 
- path_url=/products/1 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
+<arg>/auth/login</arg>
+<arg>json=&amp;{payload}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20221017 16:06:18.736" level="INFO">POST Request : url=https://fakestoreapi.com/auth/login 
+ path_url=/auth/login 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '37', 'Content-Type': 'application/json'} 
+ body=b'{"username": "johnd", "password": ""}' 
  </msg>
-<msg timestamp="20221014 14:06:26.570" level="INFO">GET Response : url=https://fakestoreapi.com/products/1 
- status=200, reason=OK 
- headers={'Date': 'Fri, 14 Oct 2022 17:06:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=16LiFZRZ4getfPUqBGTzh6ORuxE9gv1pgjebX5ww3hcH267ZAMZBNsMXL5Yk7sQT4iVHiC7IrGaZBxvJjXVtBHq8ozwygbIzNqRsTxlUdAg9qWkgw4f2%2F%2BMJ3yky22mMeMMv"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75a1e7e06bae6b00-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+<msg timestamp="20221017 16:06:18.736" level="INFO">POST Response : url=https://fakestoreapi.com/auth/login 
+ status=524, reason= 
+ headers={'Date': 'Mon, 17 Oct 2022 19:06:23 GMT', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': 'cf_use_ob=0; path=/; expires=Mon, 17-Oct-22 19:06:53 GMT', 'X-Frame-Options': 'SAMEORIGIN', 'Referrer-Policy': 'same-origin', 'Cache-Control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'Expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'CF-RAY': '75bb4d39af06a4e9-GRU', 'Server': 'cloudflare'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt; &lt;html class="no-js ie6 oldie" lang="en-US"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;    &lt;html class="no-js ie7 oldie" lang="en-US"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;    &lt;html class="no-js ie8 oldie" lang="en-US"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js" lang="en-US"&gt; &lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+
+
+&lt;title&gt;fakestoreapi.com | 524: A timeout occurred&lt;/title&gt;
+&lt;meta charset="UTF-8" /&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge" /&gt;
+&lt;meta name="robots" content="noindex, nofollow" /&gt;
+&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+&lt;link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" /&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="cf-wrapper"&gt;
+
+    
+
+    &lt;div id="cf-error-details" class="p-0"&gt;
+        &lt;header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8"&gt;
+            &lt;h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2"&gt;
+              
+              &lt;span class="inline-block"&gt;A timeout occurred&lt;/span&gt;
+              &lt;span class="code-label"&gt;Error code 524&lt;/span&gt;
+            &lt;/h1&gt;
+            &lt;div&gt;
+               Visit &lt;a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&amp;utm_campaign=fakestoreapi.com" target="_blank" rel="noopener noreferrer"&gt;cloudflare.com&lt;/a&gt; for more information.
+            &lt;/div&gt;
+            &lt;div class="mt-3"&gt;2022-10-17 19:06:23 UTC&lt;/div&gt;
+        &lt;/header&gt;
+        
+        &lt;div class="my-8 bg-gradient-gray"&gt;
+            &lt;div class="w-240 lg:w-full mx-auto"&gt;
+                &lt;div class="clearfix md:px-8"&gt;
+                  
+&lt;div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center"&gt;
+  &lt;div class="relative mb-10 md:m-0"&gt;
+    
+    &lt;span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"&gt;&lt;/span&gt;
+    &lt;span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"&gt;&lt;/span&gt;
+    
+  &lt;/div&gt;
+  &lt;span class="md:block w-full truncate"&gt;You&lt;/span&gt;
+  &lt;h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3"&gt;
+    
+    Browser
+    
+  &lt;/h3&gt;
+  &lt;span class="leading-1.3 text-2xl text-green-success"&gt;Working&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center"&gt;
+  &lt;div class="relative mb-10 md:m-0"&gt;
+    &lt;a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&amp;utm_campaign=fakestoreapi.com" target="_blank" rel="noopener noreferrer"&gt;
+    &lt;span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"&gt;&lt;/span&gt;
+    &lt;span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;span class="md:block w-full truncate"&gt;São Paulo&lt;/span&gt;
+  &lt;h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3"&gt;
+    &lt;a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&amp;utm_campaign=fakestoreapi.com" target="_blank" rel="noopener noreferrer"&gt;
+    Cloudflare
+    &lt;/a&gt;
+  &lt;/h3&gt;
+  &lt;span class="leading-1.3 text-2xl text-green-success"&gt;Working&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center"&gt;
+  &lt;div class="relative mb-10 md:m-0"&gt;
+    
+    &lt;span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"&gt;&lt;/span&gt;
+    &lt;span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"&gt;&lt;/span&gt;
+    
+  &lt;/div&gt;
+  &lt;span class="md:block w-full truncate"&gt;fakestoreapi.com&lt;/span&gt;
+  &lt;h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3"&gt;
+    
+    Host
+    
+  &lt;/h3&gt;
+  &lt;span class="leading-1.3 text-2xl text-red-error"&gt;Error&lt;/span&gt;
+&lt;/div&gt;
+
+                &lt;/div&gt;
+              
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="w-240 lg:w-full mx-auto mb-8 lg:px-8"&gt;
+            &lt;div class="clearfix"&gt;
+                &lt;div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed"&gt;
+                    &lt;h2 class="text-3xl font-normal leading-1.3 mb-4"&gt;What happened?&lt;/h2&gt;
+                    &lt;p&gt;The origin web server timed out responding to this request.&lt;/p&gt;
+                &lt;/div&gt;
+              
+                &lt;div class="w-1/2 md:w-full float-left leading-relaxed"&gt;
+                    &lt;h2 class="text-3xl font-normal leading-1.3 mb-4"&gt;What can I do?&lt;/h2&gt;
+                          &lt;h3 class="text-15 font-semibold mb-2"&gt;If you're a visitor of this website:&lt;/h3&gt;
+      &lt;p class="mb-6"&gt;Please try again in a few minutes.&lt;/p&gt;
+
+      &lt;h3 class="text-15 font-semibold mb-2"&gt;If you're the owner of this website:&lt;/h3&gt;
+      &lt;p&gt;&lt;span&gt;The connection to the origin web server was made, but the origin web server timed out before responding. The likely cause is an overloaded background task, database or application, stressing the resources on your web server. To resolve, please work with your hosting provider or web development team to free up resources for your database or overloaded application.&lt;/span&gt; &lt;a rel="noopener noreferrer" href="https://support.cloudflare.com/hc/en-us/articles/200171926-Error-524"&gt;Additional troubleshooting information here.&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+              
+        &lt;/div&gt;
+
+        &lt;div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300"&gt;
+  &lt;p class="text-13"&gt;
+    &lt;span class="cf-footer-item sm:block sm:mb-1"&gt;Cloudflare Ray ID: &lt;strong class="font-semibold"&gt;75bb4d39af06a4e9&lt;/strong&gt;&lt;/span&gt;
+    &lt;span class="cf-footer-separator sm:hidden"&gt;&amp;bull;&lt;/span&gt;
+    &lt;span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1"&gt;
+      Your IP:
+      &lt;button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn"&gt;Click to reveal&lt;/button&gt;
+      &lt;span class="hidden" id="cf-footer-ip"&gt;209.14.25.87&lt;/span&gt;
+      &lt;span class="cf-footer-separator sm:hidden"&gt;&amp;bull;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class="cf-footer-item sm:block sm:mb-1"&gt;&lt;span&gt;Performance &amp;amp; security by&lt;/span&gt; &lt;a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_524&amp;utm_campaign=fakestoreapi.com" id="brand_link" target="_blank"&gt;Cloudflare&lt;/a&gt;&lt;/span&gt;
+    
+  &lt;/p&gt;
+  &lt;script&gt;(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&amp;&amp;"classList"in b&amp;&amp;(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&amp;&amp;a.addEventListener("DOMContentLoaded",d)})();&lt;/script&gt;
+&lt;/div&gt;&lt;!-- /.error-footer --&gt;
+
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+ 
  </msg>
-<msg timestamp="20221014 14:06:26.571" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221014 14:06:25.826" endtime="20221014 14:06:26.571"/>
+<msg timestamp="20221017 16:06:18.737" level="INFO">${response} = &lt;Response [524]&gt;</msg>
+<status status="PASS" starttime="20221017 16:04:39.282" endtime="20221017 16:06:18.737"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221014 14:06:26.571" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221014 14:06:26.571" endtime="20221014 14:06:26.571"/>
+<msg timestamp="20221017 16:06:18.738" level="INFO">${response} = &lt;Response [524]&gt;</msg>
+<status status="PASS" starttime="20221017 16:06:18.738" endtime="20221017 16:06:18.738"/>
 </kw>
-<status status="PASS" starttime="20221014 14:06:25.825" endtime="20221014 14:06:26.572"/>
+<status status="PASS" starttime="20221017 16:04:39.282" endtime="20221017 16:06:18.738"/>
 </kw>
-<kw name="Log Response Message">
+<kw name="Log Status Code" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221017 16:06:20.416" endtime="20221017 16:06:20.418"/>
+</kw>
+<status status="PASS" starttime="20221017 16:06:20.416" endtime="20221017 16:06:20.419"/>
+</kw>
+<kw name="Log Response Message" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221014 14:06:26.573" endtime="20221014 14:06:26.573"/>
+<status status="PASS" starttime="20221017 16:06:20.424" endtime="20221017 16:06:20.426"/>
 </kw>
-<status status="PASS" starttime="20221014 14:06:26.573" endtime="20221014 14:06:26.573"/>
+<status status="PASS" starttime="20221017 16:06:20.424" endtime="20221017 16:06:20.426"/>
 </kw>
-<tag>GET_PRODUCT_BY_ID</tag>
-<status status="PASS" starttime="20221014 14:06:25.824" endtime="20221014 14:06:26.574"/>
+<tag>BLANK_PASS</tag>
+<status status="PASS" starttime="20221017 16:04:39.276" endtime="20221017 16:06:20.427"/>
 </test>
-<status status="PASS" starttime="20221014 14:06:25.678" endtime="20221014 14:06:26.575"/>
+<doc>Tests archive in the endpoint /login</doc>
+<status status="PASS" starttime="20221017 16:04:39.130" endtime="20221017 16:06:20.428"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">GET_PRODUCT_BY_ID</stat>
+<stat pass="1" fail="0" skip="0">BLANK_PASS</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Initial Tests">Initial Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
 </suite>
 </statistics>
 <errors>

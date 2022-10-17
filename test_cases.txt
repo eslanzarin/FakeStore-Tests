@@ -5,7 +5,10 @@ NOTES:
 - the documentation dosn't show any response information, some can be found in the Github repository (https://github.com/keikaavousi/fake-store-api) even though it's not complete.
 - to login use the users already in the database, no new users will be added to the database
 - PUT method is supposed to update a object and if it doesn't exist, create a new one, PATCH only updates the object
+- API documentation does not show status code response
+- Documentation has some mistakes in titles
 
+==============================================================================PRODUCTS===========================================================================================
 Test case 1: Get all products
 Test case 2: Get products by id
 Test case 3: Get products by inexistent id
@@ -53,6 +56,8 @@ Test case 44: Update an inexistent product with PUT method
 Test case 45: Update an inexistent product with PATCH method
 Test case 46: Delete product with valid id
 Test case 47: Delete product with invalid invalid
+
+==============================================================================CARTS===========================================================================================
 Test case 48: Get all carts 
 Test case 49: Get specific cart with valid id 
 Test case 50: Get specific cart with invalid id
@@ -84,3 +89,42 @@ Test case 75: Get all carts from specific user sorting by valid date range
 Test case 76: Get all carts from specific user sorting by valid date range with surely no carts to return
 Test case 77: Get all carts from specific user sorting by date range with invalid start date
 Test case 78: Get all carts from specific user sorting by date range with invalid end date
+Test case 79: Add a new cart to an existing user
+Test case 80: Add a new cart to an inexistent user
+Test case 81: Add a new cart with invalid date format (DD-MM-YYYY)
+Test case 82: Add a new cart with invalid month date (13, for example)
+Test case 83: Add a new cart with future year (2030)
+Test case 84: Add a new cart with blank user id space
+Test case 85: Add a new cart with blank date space
+Test case 86: Add a new cart with blank products space
+Test case 88: Add a new cart with blank productId space
+Test case 89: Add a new cart with blank product quantity space
+Test case 90: Add a new cart with invalid product quantity type (string)
+Test case 91: Add a new cart with negative product quantity
+Test case 92: Add a new cart with 0 as product quantity
+Test case 93: Update an existing cart with valid information using PUT method
+Test case 94: Update an existing cart with valid information using PATCH method
+Test case 95: Update an existing cart with inexistent id information using PUT method
+Test case 96: Update an existing cart with inexisting id information using PATCH method
+Test case 97: Update an existing cart with invalid date format using PUT method
+Test case 98: Update an existing cart with invalid date format using PATCH method
+Test case 99: Update an existing cart with blank date space using PUT method
+Test case 100: Update an existing cart with blank date space using PATCH method
+Test case 101: Update an existing cart with blank products space using PUT method
+Test case 102: Update an existing cart with blank products space using PATCH method
+Test case 103: Update an existing cart with blank productId space using PUT method
+Test case 104: Update an existing cart with blank productId space using PATCH method
+Test case 105: Update an existing cart with blank product quantity space using PUT method
+Test case 106: Update an existing cart with blank product quantity space using PATCH method
+Test case 107: Delete a cart using valid id information
+Test case 108: Delete a cart using invalid id information
+
+==============================================================================USERS===========================================================================================
+
+==============================================================================LOGIN===========================================================================================
+Test case xx: Login with valid user information
+Test case xx: Login with invalid user information
+Test case xx: Login with blank password space
+Test case xx: Login with blank username space
+Test case xx: Login with correct username and wrong password
+Test case xx: Login with e-mail from a valid user and its correct password
