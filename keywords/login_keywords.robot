@@ -7,6 +7,9 @@ Login POST /login
     ${response}        POST On Session        fakestoreapi        /auth/login        json=&{payload}        expected_status=anything
     Set Global Variable         ${response}
 
+Get Static Login Data "${user}"
+    ${payload}             Get Static Login Data        ${user}
+    Set Global Variable    ${payload}
 
 Import Static Valid Login Info
     ${json}           Import Static Info          login_info.json

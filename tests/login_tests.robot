@@ -16,7 +16,7 @@ Test Case: POST Login with Inexistent User
     # status code: 401, message: 'user name or password is incorrect'
     [tags]        INEXISTENT_USER_LOGIN
     Iniciate Session
-    Import Static Inexistent Login Info 
+    Get Static Login Data "inexistent_user"
     Login POST /login
     Log Status Code
     Log Response Message

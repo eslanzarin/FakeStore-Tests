@@ -10,7 +10,7 @@ Import Static Info
     [Return]           ${data}
 
 Log Response Message
-    Log To Console          /nResponse: ${response.content}       
+    Log To Console          \nResponse: ${response.content}       
 
 Log Status Code
-    Log To Console          /nStatus Code: ${response.status_code} 
+    Log To Console          \nStatus Code: ${response.status_code} 

@@ -3,7 +3,7 @@ Documentation         Archive for libraries importation and general needed resou
 Library               RequestsLibrary
 Library               Collections
 Library               OperatingSystem
-Library               ./python_lib.py
+Library               ../python_lib.py
 Resource              ./common/common.robot
 Resource              ./variables/variables_fakestoreapi.robot
 Resource              ../keywords/cart_keywords.robot
