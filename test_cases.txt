@@ -62,3 +62,16 @@ Test case 53: Limit results of products with negative number
 Test case 54: Sort results of carts descending
 Test case 55: Sort results of carts ascending
 Test case 56: Sort results of carts with invalid word
+Test case 57: Get carts with valid date range
+Test case 58: Get carts with no end date
+Test case 59: Get carts with no start date
+Test case 60: Get carts with invalid start date format
+Test case 61: Get carts with invalid end date format
+Test case 62: Get carts with invalid start and end date format 
+Test case 63: Get carts with valid date range ascending
+Test case 64: Get all carts with valid date range descending
+Test case 65: Get all carts with valid date range limiting the number of results ascending
+Test case 66: Get all carts with valid date range limiting the number of results descending
+Test case 67: Get all carts with valid date range limiting the number of results with invalid number ascending
+Test case 68: Get all carts with valid date range limiting the number of results with invalid number descending
+Test case 69: 
