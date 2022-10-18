@@ -14,5 +14,13 @@
     "noPassword_user": {
         "username": "johnd",
         "password": ""
+    },
+    "valid_username":{
+        "username": "johnd",
+        "password": "itAintIt"
+    },
+    "valid_email":{
+        "username": "john@gmail.com",
+        "password": "m38rmF$"
     }
 }

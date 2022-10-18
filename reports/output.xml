@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221017 17:09:21.352" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221018 09:37:51.726" rpa="false" schemaversion="3">
 <suite id="s1" name="Login Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\login_tests.robot">
-<test id="s1-t1" name="Test Case: POST Login with Inexistent User" line="15">
-<kw name="Iniciate Session" library="base">
+<kw name="Iniciate Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221017 17:09:21.637" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221017 17:09:21.636" endtime="20221017 17:09:21.637"/>
+<msg timestamp="20221018 09:37:51.989" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221018 09:37:51.989" endtime="20221018 09:37:51.990"/>
 </kw>
-<status status="PASS" starttime="20221017 17:09:21.636" endtime="20221017 17:09:21.637"/>
+<status status="PASS" starttime="20221018 09:37:51.989" endtime="20221018 09:37:51.990"/>
 </kw>
-<kw name="Get Static Login Data &quot;inexistent_user&quot;" library="login_keywords" sourcename="Get Static Login Data &quot;${user}&quot;">
+<test id="s1-t1" name="Test Case: POST Login with Valid Email and Password" line="43">
+<kw name="Get Static Login Data &quot;valid_email&quot;" library="login_keywords" sourcename="Get Static Login Data &quot;${user}&quot;">
 <kw name="Get Static Login Data" library="python_lib">
 <var>${payload}</var>
 <arg>${user}</arg>
-<msg timestamp="20221017 17:09:21.639" level="INFO">${payload} = {'username': 'NotInDatabase', 'password': 'DoNotExist'}</msg>
-<status status="PASS" starttime="20221017 17:09:21.637" endtime="20221017 17:09:21.639"/>
+<msg timestamp="20221018 09:37:51.991" level="INFO">${payload} = {'username': 'john@gmail.com', 'password': 'm38rmF$'}</msg>
+<status status="PASS" starttime="20221018 09:37:51.991" endtime="20221018 09:37:51.991"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221017 17:09:21.639" level="INFO">${payload} = {'username': 'NotInDatabase', 'password': 'DoNotExist'}</msg>
-<status status="PASS" starttime="20221017 17:09:21.639" endtime="20221017 17:09:21.639"/>
+<msg timestamp="20221018 09:37:51.991" level="INFO">${payload} = {'username': 'john@gmail.com', 'password': 'm38rmF$'}</msg>
+<status status="PASS" starttime="20221018 09:37:51.991" endtime="20221018 09:37:51.991"/>
 </kw>
-<status status="PASS" starttime="20221017 17:09:21.637" endtime="20221017 17:09:21.639"/>
+<status status="PASS" starttime="20221018 09:37:51.990" endtime="20221018 09:37:51.991"/>
 </kw>
 <kw name="Login POST /login" library="login_keywords">
 <kw name="POST On Session" library="RequestsLibrary">
@@ -35,55 +35,52 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20221017 17:09:22.531" level="INFO">POST Request : url=https://fakestoreapi.com/auth/login 
+<msg timestamp="20221018 09:37:52.875" level="INFO">POST Request : url=https://fakestoreapi.com/auth/login 
  path_url=/auth/login 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55', 'Content-Type': 'application/json'} 
- body=b'{"username": "NotInDatabase", "password": "DoNotExist"}' 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
+ body=b'{"username": "john@gmail.com", "password": "m38rmF$"}' 
  </msg>
-<msg timestamp="20221017 17:09:22.531" level="INFO">POST Response : url=https://fakestoreapi.com/auth/login 
+<msg timestamp="20221018 09:37:52.875" level="INFO">POST Response : url=https://fakestoreapi.com/auth/login 
  status=401, reason=Unauthorized 
- headers={'Date': 'Mon, 17 Oct 2022 20:09:26 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SREd1DEs8wuuptx%2F%2F6ddmWTgMUgiaIzPcc13go8Evvo0XkGvXLEBd7kjAPjkLampKNzHPApD8oIRZi4Yx7NrjSh%2Fv7f9cB9bpaWCegqoYy43Ke49VQo5Be3V%2FWGH9GjKr4%2Fj"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75bbac027e68a4a4-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Tue, 18 Oct 2022 12:38:01 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zUylM26o5CoV5PZnNbi0Dv4Xw3nFVumJUajiDD%2FfcTtj1GycpxHejKTeH9rZsv1PxdPG92M73WRdN%2BCM9Fo0e11KLSa3lujtrOFFWmnJB1IeJAWqjLXVIwRaVb19gtvclyXi"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75c1541f4db351ba-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body=username or password is incorrect 
  </msg>
-<msg timestamp="20221017 17:09:22.532" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20221017 17:09:21.640" endtime="20221017 17:09:22.532"/>
+<msg timestamp="20221018 09:37:52.875" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20221018 09:37:51.992" endtime="20221018 09:37:52.875"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221017 17:09:22.533" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20221017 17:09:22.532" endtime="20221017 17:09:22.533"/>
+<msg timestamp="20221018 09:37:52.876" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20221018 09:37:52.876" endtime="20221018 09:37:52.876"/>
 </kw>
-<status status="PASS" starttime="20221017 17:09:21.640" endtime="20221017 17:09:22.533"/>
+<status status="PASS" starttime="20221018 09:37:51.992" endtime="20221018 09:37:52.877"/>
 </kw>
-<kw name="Log Status Code" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nStatus Code: ${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221017 17:09:22.534" endtime="20221017 17:09:22.536"/>
-</kw>
-<status status="PASS" starttime="20221017 17:09:22.534" endtime="20221017 17:09:22.536"/>
-</kw>
-<kw name="Log Response Message" library="common">
+<kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221017 17:09:22.538" endtime="20221017 17:09:22.539"/>
+<status status="PASS" starttime="20221018 09:37:52.878" endtime="20221018 09:37:52.880"/>
 </kw>
-<status status="PASS" starttime="20221017 17:09:22.537" endtime="20221017 17:09:22.539"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nStatus Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221018 09:37:52.880" endtime="20221018 09:37:52.882"/>
 </kw>
-<tag>INEXISTENT_USER_LOGIN</tag>
-<status status="PASS" starttime="20221017 17:09:21.636" endtime="20221017 17:09:22.540"/>
+<status status="PASS" starttime="20221018 09:37:52.878" endtime="20221018 09:37:52.882"/>
+</kw>
+<tag>VALID_EMAIL</tag>
+<status status="PASS" starttime="20221018 09:37:51.990" endtime="20221018 09:37:52.883"/>
 </test>
 <doc>Tests archive in the endpoint /login</doc>
-<status status="PASS" starttime="20221017 17:09:21.356" endtime="20221017 17:09:22.541"/>
+<status status="PASS" starttime="20221018 09:37:51.728" endtime="20221018 09:37:52.885"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">INEXISTENT_USER_LOGIN</stat>
+<stat pass="1" fail="0" skip="0">VALID_EMAIL</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>

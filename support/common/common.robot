@@ -8,9 +8,7 @@ Import Static Info
     ${json_archive}    Get File    ./support/fixtures/static/${json_archive_name}
     ${data}            Evaluate    json.loads('''${json_archive}''')        json 
     [Return]           ${data}
-
-Log Response Message
-    Log To Console          \nResponse: ${response.content}       
-
-Log Status Code
+    
+Log Response Info
+    Log To Console          \nResponse: ${response.content} 
     Log To Console          \nStatus Code: ${response.status_code} 
