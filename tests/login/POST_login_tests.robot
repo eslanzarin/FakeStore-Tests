@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation           Tests archive in the endpoint /login
-Resource                ../support/base.robot
+Resource                ../suport/base/base.robot
 Suite Setup             Iniciate Session
 
 *** Test Cases ***
