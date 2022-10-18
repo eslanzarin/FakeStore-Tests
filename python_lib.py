@@ -11,11 +11,14 @@ def Get_Static_Login_Data(user):
     return usableJson[user]
 
 def Get_Product_By_Id():
+    #returns only the last product
     r = req.get('https://fakestoreapi.com/products')
     request_json = r.json()
     for i in range((len(request_json)+1)):
         r_id = req.get(F"https://fakestoreapi.com/products/{i}")
         print(r_id.text)
         print(r_id.status_code)
+    
+    return r_id
 
 Get_Product_By_Id()
