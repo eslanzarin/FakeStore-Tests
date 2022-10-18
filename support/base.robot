@@ -7,7 +7,7 @@ Library               ../python_lib.py
 Resource              ./common/common.robot
 Resource              ./variables/variables_fakestoreapi.robot
 Resource              ../keywords/cart_keywords.robot
-Resource              ../keywords/login/login_keywords.robot
+Resource              ../keywords/login_keywords.robot
 Resource              ../keywords/products_keywords.robot
 Resource              ../keywords/users_keywords.robot    
 

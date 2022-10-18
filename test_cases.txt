@@ -15,12 +15,13 @@ Test case 3: Get products by inexistent id
 Test case 4: Limit results of products with valid numbers
 Test case 5: Limit results of products with invalid number (more than the total number of products)
 Test case 6: Limit results of products with negative number
+Test case xx: Limit results using string value
 Test case 7: Sort results of products descending
 Test case 8: Sort results of products ascending
 Test case 9: Sort results of products with invalid word
 Test case 10: Get all categories
 Test case 11: Get all products in a specific category
-Test case 12: Get all products in an inexistent category
+Test case 12: Get products in an inexistent category
 Test case 13: Get all products in a specific category limiting the number of results
 Test case 14: Get all products in a specific category ascending
 Test case 15: Get all products in a specific category descending
