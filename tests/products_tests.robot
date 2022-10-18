@@ -13,5 +13,5 @@ Test Case 1: Get All Products 200
 Test Case 2: Get Product By Id 200
     [Tags]    GET_PRODUCT_BY_ID
     Iniciate Session
-    GET Endpoint /products By Id
+    GET /products By Id
     Log Response Info

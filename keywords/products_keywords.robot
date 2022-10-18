@@ -7,6 +7,7 @@ GET Endpoint /products
     ${response}        GET On Session          fakestoreapi        /products
     Set Global Variable        ${response}  
 
-GET Endpoint /products By Id
-    ${response}        GET On Session         fakestoreapi         /products/1
-    Set Global Variable         ${response} 
+GET /products By Id
+    # takes some time to run, since it makes a request with all the ids
+    ${response}        Get Product By Id        #keyword from phyton_lib.py 
+    Set Global Variable        ${response}
