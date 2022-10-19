@@ -47,13 +47,14 @@ def Get_Product_By_Category():
         #print(r_category.json())
     return r_category 
 
-def Limit_Get_In_Category():
+def Get_Limit_In_Category():
     r_category = Get_Product_By_Category()
-    #number = Get_Limit(F"products/category/{category}")
-    print(r_category.json()[1])
-    #return number
+    number = Get_Limit(F"products/category/{r_category.json()[1]['category']}")
+    print(r_category.json()[1]['category'])
+    #print(number)
+    return number
 
-Limit_Get_In_Category()
+#Limit_Get_In_Category()
 
 #Get_Product_By_Category()
 #Get_Beyond_Limit("products")

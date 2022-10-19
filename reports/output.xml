@@ -1,73 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221018 17:05:27.806" rpa="false" schemaversion="3">
-<suite id="s1" name="GET products tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\GET_products_tests.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221019 10:05:55.857" rpa="false" schemaversion="3">
+<suite id="s1" name="Get Products Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\get_products_tests.robot">
 <kw name="Iniciate Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221018 17:05:28.113" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221018 17:05:28.112" endtime="20221018 17:05:28.114"/>
+<msg timestamp="20221019 10:05:56.182" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221019 10:05:56.182" endtime="20221019 10:05:56.182"/>
 </kw>
-<status status="PASS" starttime="20221018 17:05:28.112" endtime="20221018 17:05:28.114"/>
+<status status="PASS" starttime="20221019 10:05:56.182" endtime="20221019 10:05:56.182"/>
 </kw>
-<test id="s1-t1" name="Test Case 11: GET All Products from Inexistent Category" line="76">
-<kw name="GET /products/category/inexistent" library="products_keywords">
+<test id="s1-t1" name="Test case 12: GET Products from specific category limiting the results" line="82">
+<kw name="GET /products/category/limit" library="products_keywords">
+<kw name="Get Limit In Category" library="python_lib">
+<var>${number_limit}</var>
+<msg timestamp="20221019 10:06:01.310" level="INFO">['electronics', 'jewelery', "men's clothing", "women's clothing"]
+["women's clothing", 'electronics', "men's clothing", 'jewelery']
+2
+jewelery</msg>
+<msg timestamp="20221019 10:06:01.310" level="INFO">${number_limit} = 2</msg>
+<status status="PASS" starttime="20221019 10:05:56.182" endtime="20221019 10:06:01.310"/>
+</kw>
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>fakestoreapi</arg>
-<arg>url=/products/category/bababababanana</arg>
+<arg>url=/products?limit=${number_limit}</arg>
 <arg>expected_status=Anything</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221018 17:05:29.258" level="INFO">GET Request : url=https://fakestoreapi.com/products/category/bababababanana 
- path_url=/products/category/bababababanana 
+<msg timestamp="20221019 10:06:01.712" level="INFO">GET Request : url=https://fakestoreapi.com/products?limit=2 
+ path_url=/products?limit=2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20221018 17:05:29.258" level="INFO">GET Response : url=https://fakestoreapi.com/products/category/bababababanana 
+<msg timestamp="20221019 10:06:01.712" level="INFO">GET Response : url=https://fakestoreapi.com/products?limit=2 
  status=200, reason=OK 
- headers={'Date': 'Tue, 18 Oct 2022 20:05:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ia7nLN0QGKzMAk4ZNpI2Ax%2Bg7cWSDUR9viYnmlIMFFfojo2F8enstL60ckOFcSwI2kEjTF%2Fu2YtgKcGDLr7toeYTCsY980I8reUAK6c4O0S7FcnzmgEWgSsNzoJg7cA43BJl"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75c3e3ccaeb30108-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=[] 
+ headers={'Date': 'Wed, 19 Oct 2022 13:06:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a8-XXDRXsgQGirCe7rj1LTPgm93EOE"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=YhRpOcF9wE1r%2F6oMDANLjYDtE3GE78uszJ%2FrxiG25eZNLuA0RAnzaMHQpSVZRpgLZcruZdHB0BIc5EinB7VUgjKi4ce9PpP0cOrT%2BnnbJC3UWH3I10IJ2P8qgPWQC8HLnoVw"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75c9bac03b660184-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},{"id":2,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3,"description":"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.","category":"men's clothing","image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","rating":{"rate":4.1,"count":259}}] 
  </msg>
-<msg timestamp="20221018 17:05:29.259" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221018 17:05:28.115" endtime="20221018 17:05:29.259"/>
+<msg timestamp="20221019 10:06:01.712" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 10:06:01.310" endtime="20221019 10:06:01.712"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221018 17:05:29.260" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221018 17:05:29.259" endtime="20221018 17:05:29.260"/>
+<msg timestamp="20221019 10:06:01.712" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 10:06:01.712" endtime="20221019 10:06:01.712"/>
 </kw>
-<status status="PASS" starttime="20221018 17:05:28.115" endtime="20221018 17:05:29.260"/>
+<status status="PASS" starttime="20221019 10:05:56.182" endtime="20221019 10:06:01.712"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221018 17:05:29.262" endtime="20221018 17:05:29.264"/>
+<status status="PASS" starttime="20221019 10:06:01.727" endtime="20221019 10:06:01.727"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221018 17:05:29.264" endtime="20221018 17:05:29.265"/>
+<status status="PASS" starttime="20221019 10:06:01.727" endtime="20221019 10:06:01.727"/>
 </kw>
-<status status="PASS" starttime="20221018 17:05:29.261" endtime="20221018 17:05:29.265"/>
+<status status="PASS" starttime="20221019 10:06:01.727" endtime="20221019 10:06:01.727"/>
 </kw>
-<tag>GET_INEXISTENT_CAT</tag>
-<status status="PASS" starttime="20221018 17:05:28.114" endtime="20221018 17:05:29.266"/>
+<tag>GET_LIMIT_CAT</tag>
+<status status="PASS" starttime="20221019 10:05:56.182" endtime="20221019 10:06:01.727"/>
 </test>
 <doc>Tests archive in the endpoint /products</doc>
-<status status="PASS" starttime="20221018 17:05:27.809" endtime="20221018 17:05:29.268"/>
+<status status="PASS" starttime="20221019 10:05:55.865" endtime="20221019 10:06:01.727"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">GET_INEXISTENT_CAT</stat>
+<stat pass="1" fail="0" skip="0">GET_LIMIT_CAT</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="GET products tests">GET products tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Get Products Tests">Get Products Tests</stat>
 </suite>
 </statistics>
 <errors>

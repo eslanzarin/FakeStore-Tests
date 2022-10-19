@@ -48,3 +48,8 @@ GET /products/category/specific
 GET /products/category/inexistent
     ${response}         GET On Session         fakestoreapi             url=/products/category/bababababanana            expected_status=Anything
     Set Global Variable        ${response}
+
+GET /products/category/limit
+    ${number_limit}     Get Limit In Category        #keyword from phyton_lib
+    ${response}         GET On Session         fakestoreapi             url=/products?limit=${number_limit}            expected_status=Anything
+    Set Global Variable        ${response}
