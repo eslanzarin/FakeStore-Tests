@@ -1,155 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221019 11:41:17.629" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221019 14:05:01.905" rpa="false" schemaversion="3">
 <suite id="s1" name="Get Products Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\get_products_tests.robot">
 <kw name="Iniciate Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221019 11:41:20.582" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221019 11:41:20.582" endtime="20221019 11:41:20.582"/>
+<msg timestamp="20221019 14:05:04.968" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221019 14:05:04.963" endtime="20221019 14:05:04.968"/>
 </kw>
-<status status="PASS" starttime="20221019 11:41:20.582" endtime="20221019 11:41:20.583"/>
+<status status="PASS" starttime="20221019 14:05:04.963" endtime="20221019 14:05:04.968"/>
 </kw>
-<test id="s1-t1" name="Test Case 17: GET Products from Specific Category Limiting Results Ascending" line="102">
+<test id="s1-t1" name="Test Case 23: GET Products from Category Sorting Results with Invalid Word" line="142">
 <kw name="GET /products/category/specific" library="products_keywords">
 <kw name="Get Product By Category" library="python_lib">
 <var>${response}</var>
-<msg timestamp="20221019 11:41:23.436" level="INFO">['electronics', 'jewelery', "men's clothing", "women's clothing"]
-["women's clothing", 'electronics', "men's clothing", 'jewelery']</msg>
-<msg timestamp="20221019 11:41:23.436" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:20.583" endtime="20221019 11:41:23.436"/>
+<msg timestamp="20221019 14:05:07.933" level="INFO">['electronics', 'jewelery', "men's clothing", "women's clothing"]
+['jewelery', "men's clothing", 'electronics', "women's clothing"]</msg>
+<msg timestamp="20221019 14:05:07.933" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 14:05:04.969" endtime="20221019 14:05:07.933"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${last_category}</var>
 <arg>${response.json()[0]['category']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221019 11:41:23.437" level="INFO">${last_category} = jewelery</msg>
-<status status="PASS" starttime="20221019 11:41:23.436" endtime="20221019 11:41:23.437"/>
+<msg timestamp="20221019 14:05:07.938" level="INFO">${last_category} = women's clothing</msg>
+<status status="PASS" starttime="20221019 14:05:07.933" endtime="20221019 14:05:07.938"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:23.437" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:23.437" endtime="20221019 11:41:23.437"/>
+<msg timestamp="20221019 14:05:07.938" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 14:05:07.938" endtime="20221019 14:05:07.938"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${last_category}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:23.437" level="INFO">${last_category} = jewelery</msg>
-<status status="PASS" starttime="20221019 11:41:23.437" endtime="20221019 11:41:23.437"/>
+<msg timestamp="20221019 14:05:07.938" level="INFO">${last_category} = women's clothing</msg>
+<status status="PASS" starttime="20221019 14:05:07.938" endtime="20221019 14:05:07.938"/>
 </kw>
-<status status="PASS" starttime="20221019 11:41:20.583" endtime="20221019 11:41:23.437"/>
+<status status="PASS" starttime="20221019 14:05:04.969" endtime="20221019 14:05:07.938"/>
 </kw>
-<kw name="GET /products/category/limit" library="products_keywords">
-<kw name="Get Limit In Category" library="python_lib">
-<var>${number_limit}</var>
-<msg timestamp="20221019 11:41:28.697" level="INFO">['electronics', 'jewelery', "men's clothing", "women's clothing"]
-["women's clothing", 'electronics', "men's clothing", 'jewelery']
-2
-jewelery</msg>
-<msg timestamp="20221019 11:41:28.697" level="INFO">${number_limit} = 2</msg>
-<status status="PASS" starttime="20221019 11:41:23.438" endtime="20221019 11:41:28.697"/>
-</kw>
+<kw name="GET /products/category Sort &quot;bababababanana&quot;" library="products_keywords" sourcename="GET /products/category Sort &quot;${sort_method}&quot;">
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>fakestoreapi</arg>
-<arg>url=/products/category/${last_category}?limit=${number_limit}</arg>
+<arg>url=/products/category/${last_category}?sort=${sort_method}</arg>
 <arg>expected_status=Anything</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 11:41:29.281" level="INFO">GET Request : url=https://fakestoreapi.com/products/category/jewelery?limit=2 
- path_url=/products/category/jewelery?limit=2 
+<msg timestamp="20221019 14:05:08.489" level="INFO">GET Request : url=https://fakestoreapi.com/products/category/women's%20clothing?sort=bababababanana 
+ path_url=/products/category/women's%20clothing?sort=bababababanana 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20221019 11:41:29.282" level="INFO">GET Response : url=https://fakestoreapi.com/products/category/jewelery?limit=2 
+<msg timestamp="20221019 14:05:08.489" level="INFO">GET Response : url=https://fakestoreapi.com/products/category/women's%20clothing?sort=bababababanana 
  status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 14:41:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"358-eW6CLo5F4U31VuH8JFMrTB2yrFw"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=IT16V44K%2BluehXpc60Vi5%2F2IjbVCyjzO%2BKhzt97M3jfdlu54wiK9m0rxJRlUuEThQRgW8ZisBhx%2BI78AaCqyEsZs8RBElbT%2Bi8DFjmqNN13IfCbCWvPEM9OpFQymJd8pJIXn"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75ca4694aee9018d-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=[{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}}] 
+ headers={'Date': 'Wed, 19 Oct 2022 17:05:17 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"e18-/56jQ+6R5xz5Q986Klic5jAGHfI"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ZhK84GHl97zgTf%2BYcdhb%2FXEO1LrNtWXdaiiJiGvGmmy5WaxeSSg60iLh%2FI3fxXlVg0W4scXoGJDYwWsz3M%2BKucQsmOe18EWJcmNe0pPpVxmjbOgaCcfocfrzMn9VJd56kZ29"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75cb190349fc0174-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=[{"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","category":"women's clothing","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","rating":{"rate":2.6,"count":235}},{"id":16,"title":"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket","price":29.95,"description":"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON","category":"women's clothing","image":"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg","rating":{"rate":2.9,"count":340}},{"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}},{"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women's clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg","rating":{"rate":4.7,"count":130}},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort","category":"women's clothing","image":"https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg","rating":{"rate":4.5,"count":146}},{"id":20,"title":"DANVOUY Womens T Shirt Casual Cotton Short","price":12.99,"description":"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.","category":"women's clothing","image":"https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg","rating":{"rate":3.6,"count":145}}] 
  </msg>
-<msg timestamp="20221019 11:41:29.282" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:28.697" endtime="20221019 11:41:29.282"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${last_category}</var>
-<arg>${response.json()[0]['category']}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221019 11:41:29.283" level="INFO">${last_category} = jewelery</msg>
-<status status="PASS" starttime="20221019 11:41:29.282" endtime="20221019 11:41:29.283"/>
+<msg timestamp="20221019 14:05:08.498" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 14:05:07.938" endtime="20221019 14:05:08.498"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:29.284" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:29.284" endtime="20221019 11:41:29.284"/>
+<msg timestamp="20221019 14:05:08.498" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221019 14:05:08.498" endtime="20221019 14:05:08.498"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
-<arg>${number_limit}</arg>
+<arg>${sort_method}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:29.285" level="INFO">${number_limit} = 2</msg>
-<status status="PASS" starttime="20221019 11:41:29.285" endtime="20221019 11:41:29.285"/>
+<msg timestamp="20221019 14:05:08.498" level="INFO">${sort_method} = bababababanana</msg>
+<status status="PASS" starttime="20221019 14:05:08.498" endtime="20221019 14:05:08.498"/>
 </kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${last_category}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:29.286" level="INFO">${last_category} = jewelery</msg>
-<status status="PASS" starttime="20221019 11:41:29.285" endtime="20221019 11:41:29.286"/>
-</kw>
-<status status="PASS" starttime="20221019 11:41:23.438" endtime="20221019 11:41:29.286"/>
-</kw>
-<kw name="GET /products/category Sort &quot;asc&quot; and Limit" library="products_keywords" sourcename="GET /products/category Sort &quot;${sort_method}&quot; and Limit">
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>fakestoreapi</arg>
-<arg>url=/products/category/${last_category}?sort=${sort_method}&amp;limit=${number_limit}</arg>
-<arg>expected_status=Anything</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 11:41:29.814" level="INFO">GET Request : url=https://fakestoreapi.com/products/category/jewelery?sort=asc&amp;limit=2 
- path_url=/products/category/jewelery?sort=asc&amp;limit=2 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20221019 11:41:29.814" level="INFO">GET Response : url=https://fakestoreapi.com/products/category/jewelery?sort=asc&amp;limit=2 
- status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 14:41:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"358-eW6CLo5F4U31VuH8JFMrTB2yrFw"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=HyUM%2B%2FWHvcLvLMFz6aoq%2BpUKNBsFCfIAsSSmrfNXdO6jt8qdBUjI0l%2B7w%2Fa%2BhUHh0xO4fsLwpjtxSHbxG5Lqobl9VHf%2FrKkyvQzYkiQ3QOSAFxVUVbbsrKCH93lev6WJJzto"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75ca4697fc0f018d-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=[{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}}] 
- </msg>
-<msg timestamp="20221019 11:41:29.814" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:29.286" endtime="20221019 11:41:29.814"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 11:41:29.815" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 11:41:29.815" endtime="20221019 11:41:29.815"/>
-</kw>
-<status status="PASS" starttime="20221019 11:41:29.286" endtime="20221019 11:41:29.816"/>
+<status status="PASS" starttime="20221019 14:05:07.938" endtime="20221019 14:05:08.498"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 11:41:29.817" endtime="20221019 11:41:29.819"/>
+<status status="PASS" starttime="20221019 14:05:08.498" endtime="20221019 14:05:08.504"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 11:41:29.819" endtime="20221019 11:41:29.821"/>
+<status status="PASS" starttime="20221019 14:05:08.504" endtime="20221019 14:05:08.504"/>
 </kw>
-<status status="PASS" starttime="20221019 11:41:29.817" endtime="20221019 11:41:29.821"/>
+<status status="PASS" starttime="20221019 14:05:08.498" endtime="20221019 14:05:08.504"/>
 </kw>
-<tag>17</tag>
-<status status="PASS" starttime="20221019 11:41:20.583" endtime="20221019 11:41:29.822"/>
+<tag>23</tag>
+<status status="PASS" starttime="20221019 14:05:04.968" endtime="20221019 14:05:08.504"/>
 </test>
 <doc>Tests archive in the endpoint /products</doc>
-<status status="PASS" starttime="20221019 11:41:17.633" endtime="20221019 11:41:29.825"/>
+<status status="PASS" starttime="20221019 14:05:01.907" endtime="20221019 14:05:08.508"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">17</stat>
+<stat pass="1" fail="0" skip="0">23</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Get Products Tests">Get Products Tests</stat>

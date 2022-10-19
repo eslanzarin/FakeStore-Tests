@@ -103,25 +103,53 @@ Test Case 17: GET Products from Specific Category Limiting Results Ascending
     [Tags]    17
     GET /products/category/specific
     GET /products/category/limit
-    GET /products/category Sort "asc" and Limit
+    GET /products/category Sort "asc" and "Valid" Limit
     Log Response Info
 
 Test Case 18: GET Products from Specific Category Limiting Results Descending
     [Tags]    18
     GET /products/category/specific
     GET /products/category/limit
-    GET /products/category Sort "desc" and Limit
+    GET /products/category Sort "desc" and "Valid" Limit
     Log Response Info
 
 Test Case 19: GET Products from Specific Category Limiting Results with Negative Number Ascending
     [Tags]    19
+    GET /products/category/specific
+    GET /products/category Sort "asc" and "Negative" Limit
+    Log Response Info
 
 Test Case 20: GET Products from Specific Category Limiting Results with Negative Number Descending
     [Tags]    20
+    GET /products/category/specific
+    GET /products/category Sort "desc" and "Negative" Limit
+    Log Response Info
 
 Test Case 21: GET Products from Specific Category Limiting Results with String Ascending
     [Tags]    21
+    #status code: 200, returns all the products in the specific category ascending
+    GET /products/category/specific
+    GET /products/category Sort "asc" and "String" Limit
+    Log Response Info    
 
 Test Case 22: GET Products from Specific Category Limiting Results with String Descending
+    #status code: 200, returns all the products in the specific category descending
     [Tags]    22
+    GET /products/category/specific
+    GET /products/category Sort "desc" and "String" Limit
+    Log Response Info 
+
+Test Case 23: GET Products from Category Sorting Results with Invalid Word
+    #status code: 200, returns all the products in the category by ascending order
+    [Tags]    23
+    GET /products/category/specific        #to return the usable category
+    GET /products/category Sort "bababababanana"
+    Log Response Info
+
+Test Case 24: GET Products from Category Sorting Results with Number
+    #status code: 200, returns all the products in the category by ascending order
+    [Tags]    24
+    GET /products/category/specific        #to return the usable category
+    GET /products/category Sort "999999"
+    Log Response Info
 

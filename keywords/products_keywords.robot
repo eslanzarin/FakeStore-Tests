@@ -64,6 +64,16 @@ GET /products/category Sort "${sort_method}"
     Set Global Variable        ${response}
     Set Global Variable        ${sort_method}
 
-GET /products/category Sort "${sort_method}" and Limit
-    ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}&limit=${number_limit}              expected_status=Anything
-    Set Global Variable        ${response}
+GET /products/category Sort "${sort_method}" and "${type}" Limit
+    IF    "${type}" == "Valid"
+        ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}&limit=${number_limit}              expected_status=Anything
+        Set Global Variable        ${response}
+    ELSE IF    "${type}" == "Negative"
+        ${number_limit}        Set Variable        ${-2}
+        ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}&limit=${number_limit}              expected_status=Anything
+        Set Global Variable        ${response}  
+    ELSE IF    "${type}" == "String"
+        ${number_limit}        Set Variable        bababababanana
+        ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}&limit=${number_limit}              expected_status=Anything
+        Set Global Variable        ${response}
+    END
