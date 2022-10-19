@@ -86,16 +86,32 @@ Test Case 14: GET Products from Specific Category Limiting the Results
     Log Response Info
 
 Test Case 15: GET Products from Specific Category Ascending
+    #status code: 200
     [Tags]    15
+    GET /products/category/specific            #will return the last category from the request
+    GET /products/category Sort "asc"
+    Log Response Info
 
 Test Case 16: GET Products from Specific Category Descending
+    #status code: 200
     [Tags]    16
+    GET /products/category/specific            #will return the last category from the request
+    GET /products/category Sort "desc"
+    Log Response Info
 
 Test Case 17: GET Products from Specific Category Limiting Results Ascending
     [Tags]    17
+    GET /products/category/specific
+    GET /products/category/limit
+    GET /products/category Sort "asc" and Limit
+    Log Response Info
 
 Test Case 18: GET Products from Specific Category Limiting Results Descending
     [Tags]    18
+    GET /products/category/specific
+    GET /products/category/limit
+    GET /products/category Sort "desc" and Limit
+    Log Response Info
 
 Test Case 19: GET Products from Specific Category Limiting Results with Negative Number Ascending
     [Tags]    19

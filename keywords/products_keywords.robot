@@ -43,7 +43,9 @@ GET /products/categories
 
 GET /products/category/specific
     ${response}         Get Product By Category
+    ${last_category}         Set Variable        ${response.json()[0]['category']}
     Set Global Variable        ${response}
+    Set Global Variable        ${last_category}
 
 GET /products/category/inexistent
     ${response}         GET On Session         fakestoreapi             url=/products/category/bababababanana            expected_status=Anything
@@ -51,5 +53,17 @@ GET /products/category/inexistent
 
 GET /products/category/limit
     ${number_limit}     Get Limit In Category        #keyword from phyton_lib
-    ${response}         GET On Session         fakestoreapi             url=/products?limit=${number_limit}            expected_status=Anything
+    ${response}         GET On Session         fakestoreapi             url=/products/category/${last_category}?limit=${number_limit}            expected_status=Anything
+    ${last_category}         Set Variable        ${response.json()[0]['category']}
+    Set Global Variable        ${response}
+    Set Global Variable        ${number_limit}
+    Set Global Variable        ${last_category}
+
+GET /products/category Sort "${sort_method}"
+    ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}              expected_status=Anything
+    Set Global Variable        ${response}
+    Set Global Variable        ${sort_method}
+
+GET /products/category Sort "${sort_method}" and Limit
+    ${response}        GET On Session         fakestoreapi             url=/products/category/${last_category}?sort=${sort_method}&limit=${number_limit}              expected_status=Anything
     Set Global Variable        ${response}
