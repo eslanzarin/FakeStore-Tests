@@ -36,10 +36,11 @@ Test case 23: Add a new product with blank price space
 Test case 24: Add a new product with negative price
 Test case 25: Add a new product with invalid price type (string)
 Test case 26: Add a new product with blank description space
-Test case 27: Add a new produc with invalid image href
+Test case xx: Numeric description space
+Test case 27: Add a new produc with invalid image href (NOT MADE, ACCEPTS ANY URL AS IMAGE)
 Test case 28: Add a new product with blank image space
-Test case 29: Add a new product in an existing category
-Test case 30: Add a new product in an inexisting category 
+Test case 29: Add a new product in an existing category (NOT MADE, ACCEPTS ANY WORD AS VALID CATEGORY)
+Test case 30: Add a new product in an inexisting category (NOT MADE, ACCEPTS ANY WORD AS VALID CATEGORY)
 Test case 31: Add a new product with blank category space
 Test case 32: Update a product with valid information using PUT method
 Test case 33: Update a product with valid information using PATCH method

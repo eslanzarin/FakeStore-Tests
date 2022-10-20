@@ -1,4 +1,3 @@
-from tkinter import W
 import requests as req
 from faker import Faker
 import json
@@ -54,9 +53,10 @@ def Get_Limit_In_Category():
     #print(number)
     return number
 
+"""
 def Post_Invalid_Product(key, value):
     if key == ""
-
+"""
 
 #Limit_Get_In_Category()
 #Get_Product_By_Category()
