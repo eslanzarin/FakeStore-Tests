@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation           Keywords for actions and tests in the endpoint /products
+Documentation           Keywords for actions and tests in the endpoint /products using GET method
 Resource                ../support/base.robot
 
 *** Keywords ***

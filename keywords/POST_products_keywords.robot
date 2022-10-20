@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation           Keywords for actions and tests in the endpoint /products
+Documentation           Keywords for actions and tests in the endpoint /products using POST method
 Resource                ../support/base.robot
 
 *** Keywords ***
@@ -38,3 +38,7 @@ Invalid "${type}" Description Data
 Invalid Blank Image Data
     ${image}        Set Variable        
     Set Global Variable        ${image}
+
+Invalid Blank Category Data
+    ${category}        Set Variable
+    Set Global Variable        ${category}

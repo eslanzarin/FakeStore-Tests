@@ -18,3 +18,5 @@ Product Data
 Set Payload Data
     ${payload}          Create Dictionary             title=${title}        price=${price}         description=${description}        image=${image}       category=${category}
     Set Global Variable        ${payload}
+
+Set Invalid Payload Data

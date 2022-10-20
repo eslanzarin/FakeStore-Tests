@@ -86,3 +86,11 @@ Test Case 34: POST Product with Blank Image Space
     Set Payload Data
     POST endpoint /products
     Log Response Info
+
+Test Case 35: POST Product with Blank Category Space
+    [tags]        35
+    Product Data
+    Invalid Blank Category Data
+    Set Payload Data
+    POST endpoint /products
+    Log Response Info

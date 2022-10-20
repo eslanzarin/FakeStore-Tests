@@ -1,3 +1,4 @@
+from pydoc import describe
 import requests as req
 from faker import Faker
 import json
@@ -52,6 +53,26 @@ def Get_Limit_In_Category():
     print(r_category.json()[1]['category'])
     #print(number)
     return number
+
+def Create_Invalid_Post_Product_Data(key):
+    invalid_dict = {}
+
+    invalid_dict["title"] = "test product"
+    invalid_dict["price"] = 1000
+    invalid_dict["description"] = "fake product description"
+    invalid_dict["image"] = "anyimage.jpg"
+    invalid_dict["category"] = "fake product category"
+
+    print(invalid_dict)
+
+    invalid_dict.pop(key)
+
+
+    return invalid_dict
+
+aaaa = Create_Invalid_Post_Product_Data("title")
+print(aaaa)
+
 
 """
 def Post_Invalid_Product(key, value):
