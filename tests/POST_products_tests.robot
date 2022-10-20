@@ -94,3 +94,9 @@ Test Case 35: POST Product with Blank Category Space
     Set Payload Data
     POST endpoint /products
     Log Response Info
+
+Test Case 36: POST Product without Title Key
+    [tags]        36
+    Invalid "title" Key
+    POST endpoint /products
+    Log Response Info

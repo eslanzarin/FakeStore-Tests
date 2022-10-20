@@ -42,3 +42,7 @@ Invalid Blank Image Data
 Invalid Blank Category Data
     ${category}        Set Variable
     Set Global Variable        ${category}
+
+Invalid "${key}" Key
+    ${payload}        Create Invalid Post Product Data        ${key}
+    Set Global Variable        ${payload}

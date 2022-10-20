@@ -1,120 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221020 11:40:45.366" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221020 12:29:07.569" rpa="false" schemaversion="3">
 <suite id="s1" name="Post Products Tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\post_products_tests.robot">
 <kw name="Iniciate Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221020 11:40:45.906" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221020 11:40:45.906" endtime="20221020 11:40:45.906"/>
+<msg timestamp="20221020 12:29:08.085" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.085"/>
 </kw>
-<status status="PASS" starttime="20221020 11:40:45.906" endtime="20221020 11:40:45.906"/>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.085"/>
 </kw>
-<test id="s1-t1" name="Test Case 35: POST Product with Blank Category Space" line="90">
-<kw name="Product Data" library="dynamics">
-<kw name="Sentence" library="FakerLibrary">
-<var>${title}</var>
-<arg>nb_words=3</arg>
-<doc>Generate a sentence.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${title} = Consumer me.</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Pyfloat" library="FakerLibrary">
-<var>${price}</var>
-<arg>min_value=10</arg>
-<arg>max_value=10000</arg>
-<arg>right_digits=2</arg>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${price} = 5558.61</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Paragraph" library="FakerLibrary">
-<var>${description}</var>
-<arg>nb_sentences=3</arg>
-<doc>Generate a paragraph.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${description} = True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Url" library="FakerLibrary">
-<var>${image}</var>
-<doc>:param schemes: a list of strings to use as schemes, one will chosen randomly.
-    If None, it will generate http and https urls.
-    Passing an empty list will result in schemeless url generation like "://domain.com".
-:return: a random url string.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${image} = https://www.wright-williams.info/</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Word" library="FakerLibrary">
-<var>${category}</var>
-<doc>Generate a word.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${category} = control</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${title}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${title} = Consumer me.</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${price}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${price} = 5558.61</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${description}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${description} = True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${image}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${image} = https://www.wright-williams.info/</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${category}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${category} = control</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<status status="PASS" starttime="20221020 11:40:45.906" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Invalid Blank Category Data" library="POST_products_keywords">
-<kw name="Set Variable" library="BuiltIn">
-<var>${category}</var>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${category} = </msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${category}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${category} = </msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
-</kw>
-<kw name="Set Payload Data" library="dynamics">
-<kw name="Create Dictionary" library="BuiltIn">
+<test id="s1-t1" name="Test Case 36: POST Product without Title Key" line="98">
+<kw name="Invalid &quot;title&quot; Key" library="POST_products_keywords" sourcename="Invalid &quot;${key}&quot; Key">
+<kw name="Create Invalid Post Product Data" library="python_lib">
 <var>${payload}</var>
-<arg>price=${price}</arg>
-<arg>description=${description}</arg>
-<arg>image=${image}</arg>
-<arg>category=${category}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${payload} = {'price': 5558.61, 'description': 'True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.', 'image': 'https://www.wr...</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
+<arg>${key}</arg>
+<msg timestamp="20221020 12:29:08.085" level="INFO">{'title': 'test product', 'price': 1000, 'description': 'fake product description', 'image': 'anyimage.jpg', 'category': 'fake product category'}</msg>
+<msg timestamp="20221020 12:29:08.085" level="INFO">${payload} = {'price': 1000, 'description': 'fake product description', 'image': 'anyimage.jpg', 'category': 'fake product category'}</msg>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.085"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:45.908" level="INFO">${payload} = {'price': 5558.61, 'description': 'True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.', 'image': 'https://www.wr...</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
+<msg timestamp="20221020 12:29:08.085" level="INFO">${payload} = {'price': 1000, 'description': 'fake product description', 'image': 'anyimage.jpg', 'category': 'fake product category'}</msg>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.085"/>
 </kw>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:45.908"/>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.085"/>
 </kw>
 <kw name="POST endpoint /products" library="POST_products_keywords">
 <kw name="POST On Session" library="RequestsLibrary">
@@ -124,58 +36,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20221020 11:40:46.355" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+<msg timestamp="20221020 12:29:08.823" level="INFO">POST Request : url=https://fakestoreapi.com/products 
  path_url=/products 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '237', 'Content-Type': 'application/json'} 
- body=b'{"price": 5558.61, "description": "True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.", "image": "https://www.wright-williams.info/", "category": ""}' 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '120', 'Content-Type': 'application/json'} 
+ body=b'{"price": 1000, "description": "fake product description", "image": "anyimage.jpg", "category": "fake product category"}' 
  </msg>
-<msg timestamp="20221020 11:40:46.355" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+<msg timestamp="20221020 12:29:08.823" level="INFO">POST Response : url=https://fakestoreapi.com/products 
  status=200, reason=OK 
- headers={'Date': 'Thu, 20 Oct 2022 14:40:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"ee-vESyNQ/BH6ZI7nDHq8g0OmLpZvU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=WkmOGlfwPBk9%2BQRolmsJcfMqjM%2FoPq6M%2B%2BbFjKAkUuPJtpyKgonTSwprsspFmHd%2BbbVpaaTThnAScHJnTkKhxeRLcOvWLdF4G%2B8MCI0IjjQ99yhrXwr1u0H5Q2JQGxpUKZ6b"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d282f70f960320-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body={"id":21,"price":5558.61,"description":"True color before together part hair choice. Table available miss learn. Foot experience really development certainly site gas management.","image":"https://www.wright-williams.info/","category":""} 
+ headers={'Date': 'Thu, 20 Oct 2022 15:29:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"79-lGuZjvRa3F8o+9InDZfBlGokqkE"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=AyUdi0ColXG1PlQSvNqwot1a%2B8XWKA8y7mTcnApjmTque2IXBDKRjsOmVliuk1KE750Freffg8UD33AV%2BPnaom1f91zD4CTj9o8ZF6IjsdPTUGmxLD5IfhcAPnyYpaXYDjdC"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d2c9d1c8ce0290-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":21,"price":1000,"description":"fake product description","image":"anyimage.jpg","category":"fake product category"} 
  </msg>
-<msg timestamp="20221020 11:40:46.355" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:46.355"/>
+<msg timestamp="20221020 12:29:08.824" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.824"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221020 11:40:46.355" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221020 11:40:46.355" endtime="20221020 11:40:46.355"/>
+<msg timestamp="20221020 12:29:08.824" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 12:29:08.824" endtime="20221020 12:29:08.824"/>
 </kw>
-<status status="PASS" starttime="20221020 11:40:45.908" endtime="20221020 11:40:46.355"/>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.824"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 11:40:46.355" endtime="20221020 11:40:46.372"/>
+<status status="PASS" starttime="20221020 12:29:08.825" endtime="20221020 12:29:08.826"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 11:40:46.372" endtime="20221020 11:40:46.372"/>
+<status status="PASS" starttime="20221020 12:29:08.827" endtime="20221020 12:29:08.828"/>
 </kw>
-<status status="PASS" starttime="20221020 11:40:46.355" endtime="20221020 11:40:46.372"/>
+<status status="PASS" starttime="20221020 12:29:08.825" endtime="20221020 12:29:08.828"/>
 </kw>
-<tag>35</tag>
-<status status="PASS" starttime="20221020 11:40:45.906" endtime="20221020 11:40:46.372"/>
+<tag>36</tag>
+<status status="PASS" starttime="20221020 12:29:08.085" endtime="20221020 12:29:08.828"/>
 </test>
 <doc>Tests archive in the endpoint /products</doc>
-<status status="PASS" starttime="20221020 11:40:45.370" endtime="20221020 11:40:46.372"/>
+<status status="PASS" starttime="20221020 12:29:07.569" endtime="20221020 12:29:08.832"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">35</stat>
+<stat pass="1" fail="0" skip="0">36</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Post Products Tests">Post Products Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221020 11:40:45.898" level="ERROR">Error in file 'C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\dynamics.robot' on line 3: Resource file 'base.robot' does not exist.</msg>
+<msg timestamp="20221020 12:29:08.085" level="ERROR">Error in file 'C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\dynamics.robot' on line 3: Resource file 'base.robot' does not exist.</msg>
 </errors>
 </robot>
