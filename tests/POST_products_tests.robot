@@ -100,3 +100,27 @@ Test Case 36: POST Product without Title Key
     Invalid "title" Key
     POST endpoint /products
     Log Response Info
+
+Test Case 37: POST Product without Price Key
+    [tags]        37
+    Invalid "price" Key
+    POST endpoint /products
+    Log Response Info
+
+Test Case 38: POST Product without Description Key
+    [tags]        38
+    Invalid "description" Key
+    POST endpoint /products
+    Log Response Info
+
+Test Case 39: POST Product without Image Key
+    [tags]        39
+    Invalid "image" Key
+    POST endpoint /products
+    Log Response Info
+
+Test Case 40: POST Product without Category Key
+    [tags]        40
+    Invalid "category" Key
+    POST endpoint /products
+    Log Response Info
