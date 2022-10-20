@@ -1,0 +1,9 @@
+{
+    "change_all_data":{
+        "title": "SomeThing",
+        "price": "99999",
+        "description": "Any description you might like",
+        "image": "DoesNotMatter.jpg",
+        "category": "AAAAAAAAAAA"
+    }
+}

@@ -11,6 +11,12 @@ def Get_Static_Login_Data(user):
     #print(usableJson[especifico])
     return usableJson[user]
 
+def Get_Static_Product_Data(type):
+    with open("./support/fixtures/static/products_info.json", encoding="utf-8") as json_normal:
+        usableJson = json.load(json_normal)
+    #print(usableJson[especifico])
+    return usableJson[type]
+
 def Get_Product_By_Id():
     #returns only the last product for validation purposes
     r = req.get('https://fakestoreapi.com/products')

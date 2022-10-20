@@ -8,6 +8,7 @@ Suite Setup             Iniciate Session
 Test Case 25: POST Valid Product 
     [tags]        25
     Product Data
+    Set Payload Data
     POST endpoint /products
     Log Response Info
 

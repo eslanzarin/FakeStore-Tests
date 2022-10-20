@@ -11,6 +11,7 @@ Resource              ../keywords/cart_keywords.robot
 Resource              ../keywords/login_keywords.robot
 Resource              ../keywords/GET_products_keywords.robot
 Resource              ../keywords/POST_products_keywords.robot
+Resource              ../keywords/PUT_products_keywords.robot
 Resource              ../keywords/users_keywords.robot  
 Resource              ./fixtures/dynamics.robot  
 
