@@ -54,9 +54,12 @@ def Get_Limit_In_Category():
     #print(number)
     return number
 
-#Limit_Get_In_Category()
+def Post_Invalid_Product(key, value):
+    if key == ""
 
-Get_Product_By_Category()
+
+#Limit_Get_In_Category()
+#Get_Product_By_Category()
 #Get_Beyond_Limit("products")
 #Get_Limit("products/category/electronics")
 #Get_Product_By_Id()
