@@ -5,5 +5,40 @@
         "description": "Any description you might like",
         "image": "DoesNotMatter.jpg",
         "category": "AAAAAAAAAAA"
+    },
+    "blank_title":{
+        "title": "",
+        "price": "99999",
+        "description": "Any description you might like",
+        "image": "DoesNotMatter.jpg",
+        "category": "AAAAAAAAAAA"
+    },
+    "blank_price":{
+        "title": "SomeThing",
+        "price": "",
+        "description": "Any description you might like",
+        "image": "DoesNotMatter.jpg",
+        "category": "AAAAAAAAAAA"
+    },
+    "blank_description":{
+        "title": "SomeThing",
+        "price": "9999",
+        "description": "",
+        "image": "DoesNotMatter.jpg",
+        "category": "AAAAAAAAAAA"
+    },
+    "blank_image":{
+        "title": "SomeThing",
+        "price": "99999",
+        "description": "Any description you might like",
+        "image": "",
+        "category": "AAAAAAAAAAA"
+    },
+    "blank_category":{
+        "title": "SomeThing",
+        "price": "99999",
+        "description": "Any description you might like",
+        "image": "DoesNotMatter.jpg",
+        "category": ""
     }
 }

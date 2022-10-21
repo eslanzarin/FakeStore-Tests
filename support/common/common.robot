@@ -1,6 +1,5 @@
 *** Settings ***
 Documentation         Keywords for the whole program
-Library               OperatingSystem
 
 *** Keywords ***
 Import Static Info

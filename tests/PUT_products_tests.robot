@@ -13,6 +13,9 @@ Test Case 41: PUT Update All Product Info
 
 Test Case 42: PUT Update Product with Blank Title
     [Tags]        42
+    Get Static Product Info "blank_title"
+    PUT endpoint /products
+    Log Response Info
 
 Test Case 43: PUT Update Product with Same Title
     [Tags]        43
