@@ -60,23 +60,60 @@ def Get_Limit_In_Category():
     #print(number)
     return number
 
-def Create_Invalid_Post_Product_Data(key):
+def Create_Invalid_Post_Data(endpoint, key):
     invalid_dict = {}
 
-    invalid_dict["title"] = "test product"
-    invalid_dict["price"] = 1000
-    invalid_dict["description"] = "fake product description"
-    invalid_dict["image"] = "anyimage.jpg"
-    invalid_dict["category"] = "fake product category"
+    if endpoint == "products":
+        invalid_dict["title"] = "test product"
+        invalid_dict["price"] = 1000
+        invalid_dict["description"] = "fake product description"
+        invalid_dict["image"] = "anyimage.jpg"
+        invalid_dict["category"] = "fake product category"
+
+    if endpoint == "user":
+        invalid_dict={
+            "email": "anyemail@gmail.com",
+            "username":"Anyuser",
+            "password":"aaaaa123",
+            "name":{
+                "firstname":"Any",
+                "lastname":"User"
+                },
+            "address":{
+                "city":"kilcoole",
+                "street":"7835 new road",
+                "number":3,
+                "zipcode":"12926-3874",
+                "geolocation":{
+                        "lat":"-37.3159",
+                        "long":"81.1496"
+                        }
+                },
+            "phone":'1-570-236-7033'
+        }
+
+        '''
+        invalid_dict["email"] = "anyemail@gmail.com"
+        invalid_dict["username"] = "anyuser"
+        invalid_dict["password"] = "anypassword123"
+        invalid_dict["name"]["firstname"] = "Any"
+        invalid_dict["name"]["lastname"] = "User"
+        invalid_dict["address"]["city"] = "anycity"
+        invalid_dict["address"]["street"] = "anystreet"
+        invalid_dict["address"]["number"]= 5555
+        invalid_dict["address"]["zip_code"] = 12345-7890
+        invalid_dict["address"]["geolocation"]["lat"] = -54.665
+        invalid_dict["address"]["geolocation"]["lon"] = 30.3330
+        invalid_dict["phone"] = 33335-880
+        '''
 
     print(invalid_dict)
 
     invalid_dict.pop(key)
 
-
     return invalid_dict
 
-aaaa = Create_Invalid_Post_Product_Data("title")
+aaaa = Create_Invalid_Post_Data("user", "email")
 print(aaaa)
 
 

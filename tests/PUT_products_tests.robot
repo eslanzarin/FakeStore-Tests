@@ -7,7 +7,7 @@ Suite Setup             Iniciate Session
 ========================================================PUT========================================================
 Test Case 41: PUT Update All Product Info
     [Tags]        41
-    Get Static Product Data "change_all_data"
+    Get Static Product Info "change_all_data"
     PUT endpoint /products
     Log Response Info
 

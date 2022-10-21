@@ -44,5 +44,5 @@ Invalid Blank Category Data
     Set Global Variable        ${category}
 
 Invalid "${key}" Key
-    ${payload}        Create Invalid Post Product Data        ${key}
+    ${payload}        Create Invalid Post Data        ${key}
     Set Global Variable        ${payload}
