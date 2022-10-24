@@ -95,6 +95,15 @@ Until now, this repository only covers test cases for the Login and Products end
 
 ## :closed_lock_with_key: /auth/login Results
 ---
+### POST Method
+| TEST CASE | TAG | RESPONSE |
+|---|---|---|
+|POST Login with Valid User|VALID_LOGIN|Status code: 200, message: bearer token{}|
+|POST Login with Inexistent User|INEXISTENT_USER_LOGIN|status code: 401, message: 'user name or password is incorrect'|
+|POST Login Blank Password Space|BLANK_PASS|status code: 524 (timeout), message: html format|
+|POST Login with Blank Username Space|BLANK_USERNAME|status code: 524 (timeout), message: html format|
+|POST Login with Correct Username|CORRECT_USERNAME|status code: 401, message: 'username or password is incorrect'|
+|POST Login with Valid Email and Password|VALID_EMAIL|status code: 401, message: 'username or password is incorrect'|
 
 ## :woman_technologist: Reach out!
 ---
