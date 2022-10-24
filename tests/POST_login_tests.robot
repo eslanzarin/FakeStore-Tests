@@ -4,7 +4,7 @@ Resource                ../support/base.robot
 Suite Setup             Iniciate Session
 
 *** Test Cases ***
-========================================================POST========================================================
+#========================================================POST========================================================
 Test Case: POST Login with Valid User
     #status code: 200, message: token{}
     [tags]        VALID_LOGIN
