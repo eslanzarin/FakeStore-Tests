@@ -112,6 +112,20 @@ Until now, this repository only covers test cases for the Login and Products end
 |PUT Update Product Image|51|Status code: 200, returns data of the updated product|
 |PUT Update Product Category|52|Status code: 200, returns data of the updated product|
 
+### PATCH Method
+|PATCH Update All Product Info|53|Status code: 200, returns the updated product data|
+|PATCH Update Product with Blank Title|54|Status code: 200, returns the updated product data with blank key|
+|PATCH Update Product with Blank Price|55|Status code: 200, returns the updated product data with blank key|
+|PATCH Update Product with Blank Description|56|Status code: 200, returns the updated product data with blank key|
+|PATCH Update Product with Blank Image|57|Status code: 200, returns the updated product data with blank key|
+|PATCH Update Product with Blank Category|58|Status code: 200, returns the updated product data with blank key|
+|PATCH Update Product with Inexistent Id|59|Status code: 200, returns data of the updated product|
+|PATCH Update Product Title|60|Status code: 200, returns data of the updated product|
+|PATCH Update Product Price|61|Status code: 200, returns data of the updated product|
+|PATCH Update Product Description|62|Status code: 200, returns data of the updated product|
+|PATCH Update Product Image|63|Status code: 200, returns data of the updated product|
+|PATCH Update Product Category|64|Status code: 200, returns data of the updated product|
+
 ## :shopping_cart: /carts Results
 
 ## :adult: /users Results

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221024 13:04:38.862" rpa="false" schemaversion="3">
-<suite id="s1" name="PUT products tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\PUT_products_tests.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20221024 13:18:04.488" rpa="false" schemaversion="3">
+<suite id="s1" name="PATCH products tests" source="C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\tests\PATCH_products_tests.robot">
 <kw name="Iniciate Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakestoreapi</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221024 13:04:39.404" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221024 13:04:39.404" endtime="20221024 13:04:39.404"/>
+<msg timestamp="20221024 13:18:05.013" level="INFO">Creating Session using : alias=fakestoreapi, url=https://fakestoreapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221024 13:18:05.012" endtime="20221024 13:18:05.013"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:39.404" endtime="20221024 13:04:39.405"/>
+<status status="PASS" starttime="20221024 13:18:05.012" endtime="20221024 13:18:05.013"/>
 </kw>
-<test id="s1-t1" name="Test Case 41: PUT Update All Product Info" line="8">
+<test id="s1-t1" name="Test Case 53: PATCH Update All Product Info" line="8">
 <kw name="Get Static Product Info &quot;change_all_data&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:39.406" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:39.405" endtime="20221024 13:04:39.406"/>
+<msg timestamp="20221024 13:18:05.014" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:05.013" endtime="20221024 13:18:05.014"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:39.406" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:39.406" endtime="20221024 13:04:39.406"/>
+<msg timestamp="20221024 13:18:05.014" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:05.014" endtime="20221024 13:18:05.014"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:39.405" endtime="20221024 13:04:39.406"/>
+<status status="PASS" starttime="20221024 13:18:05.013" endtime="20221024 13:18:05.014"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -35,58 +35,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:40.113" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:05.771" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '146', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "99999", "description": "Any description you might like", "image": "DoesNotMatter.jpg", "category": "AAAAAAAAAAA"}' 
  </msg>
-<msg timestamp="20221024 13:04:40.113" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:05.771" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"91-9bfH953dQICRqh3TENHrebac3q8"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=POaTqeH5S7%2BxUWrne2sLouK1DjBm7MoBXYtOFYcrw7ScjGQ3tVK3OaoBkRPOJsHqTqHk7mQFi5g10P9QpA7u0bJr9EfF%2BlPyMCfr8xIpQ%2BDa7fsHNRfV9AaBU6Z1QV7begZA"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f3776d91a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"91-9bfH953dQICRqh3TENHrebac3q8"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Osx1jDHSSalCHguQGmSREam7bntMKd2zlVDyiy99fnCtTI3k9BZn6WoOepS3RjqC7Zhbjt%2BhuEXfzIpJdNLon%2BDwg6Q2ICWkR6nGajdW4Lpl1RO1IuhrSm3qbZpga1S8QY3V"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f40722bfd9011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"SomeThing","price":"99999","description":"Any description you might like","image":"DoesNotMatter.jpg","category":"AAAAAAAAAAA"} 
  </msg>
-<msg timestamp="20221024 13:04:40.114" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:39.407" endtime="20221024 13:04:40.114"/>
+<msg timestamp="20221024 13:18:05.771" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:05.015" endtime="20221024 13:18:05.771"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.115" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.114" endtime="20221024 13:04:40.115"/>
+<msg timestamp="20221024 13:18:05.772" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:05.771" endtime="20221024 13:18:05.772"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:39.407" endtime="20221024 13:04:40.115"/>
+<status status="PASS" starttime="20221024 13:18:05.015" endtime="20221024 13:18:05.772"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.117" endtime="20221024 13:04:40.118"/>
+<status status="PASS" starttime="20221024 13:18:05.773" endtime="20221024 13:18:05.773"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.118" endtime="20221024 13:04:40.120"/>
+<status status="PASS" starttime="20221024 13:18:05.773" endtime="20221024 13:18:05.774"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.116" endtime="20221024 13:04:40.120"/>
+<status status="PASS" starttime="20221024 13:18:05.773" endtime="20221024 13:18:05.774"/>
 </kw>
-<tag>41</tag>
-<status status="PASS" starttime="20221024 13:04:39.405" endtime="20221024 13:04:40.121"/>
+<tag>53</tag>
+<status status="PASS" starttime="20221024 13:18:05.013" endtime="20221024 13:18:05.775"/>
 </test>
-<test id="s1-t2" name="Test Case 42: PUT Update Product with Blank Title" line="14">
+<test id="s1-t2" name="Test Case 53: PATCH Update Product with Blank Title" line="14">
 <kw name="Get Static Product Info &quot;blank_title&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:40.126" level="INFO">${payload} = {'title': '', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.124" endtime="20221024 13:04:40.126"/>
+<msg timestamp="20221024 13:18:05.777" level="INFO">${payload} = {'title': '', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:05.777" endtime="20221024 13:18:05.777"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.126" level="INFO">${payload} = {'title': '', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.126" endtime="20221024 13:04:40.126"/>
+<msg timestamp="20221024 13:18:05.778" level="INFO">${payload} = {'title': '', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:05.777" endtime="20221024 13:18:05.778"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.124" endtime="20221024 13:04:40.127"/>
+<status status="PASS" starttime="20221024 13:18:05.777" endtime="20221024 13:18:05.778"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -96,58 +96,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:40.471" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.115" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '137', 'Content-Type': 'application/json'} 
  body=b'{"title": "", "price": "99999", "description": "Any description you might like", "image": "DoesNotMatter.jpg", "category": "AAAAAAAAAAA"}' 
  </msg>
-<msg timestamp="20221024 13:04:40.471" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.115" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"88-Lh2zOvy40IcSGwrJD2mT8isveNk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=aWB0%2BJGyCV9Sb1POEsrKonWMkepn084FnIFNR6BSDnAy9T%2BoLrn0cyv3pvlN2zczYMuh8X57DuVlgU0Z0P%2Ffw9ZmGDo%2BEmCBgyh8Vl0u1VX4f%2B20SgilT0oUY5av%2BkL3ylAp"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f37b7c3da4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"88-Lh2zOvy40IcSGwrJD2mT8isveNk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=HiwYPxvpLC75GdAaGIkJ%2FddCkfxzmBYCNdvckVxxiCnffLPJ%2F0yFbLAtBO4P4iMBQbJBk3IUEV9r2ILVFjL2yrjElxycX8U5KkzJh3X8R3Q9PvzVB6z7CwFT7a5t%2BtODZZLN"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f40726ce20011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"","price":"99999","description":"Any description you might like","image":"DoesNotMatter.jpg","category":"AAAAAAAAAAA"} 
  </msg>
-<msg timestamp="20221024 13:04:40.471" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.128" endtime="20221024 13:04:40.471"/>
+<msg timestamp="20221024 13:18:06.115" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:05.778" endtime="20221024 13:18:06.115"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.472" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.472" endtime="20221024 13:04:40.473"/>
+<msg timestamp="20221024 13:18:06.116" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.116" endtime="20221024 13:18:06.116"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.128" endtime="20221024 13:04:40.473"/>
+<status status="PASS" starttime="20221024 13:18:05.778" endtime="20221024 13:18:06.117"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.475" endtime="20221024 13:04:40.476"/>
+<status status="PASS" starttime="20221024 13:18:06.119" endtime="20221024 13:18:06.120"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.477" endtime="20221024 13:04:40.478"/>
+<status status="PASS" starttime="20221024 13:18:06.121" endtime="20221024 13:18:06.122"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.474" endtime="20221024 13:04:40.479"/>
+<status status="PASS" starttime="20221024 13:18:06.118" endtime="20221024 13:18:06.123"/>
 </kw>
-<tag>42</tag>
-<status status="PASS" starttime="20221024 13:04:40.123" endtime="20221024 13:04:40.479"/>
+<tag>53</tag>
+<status status="PASS" starttime="20221024 13:18:05.776" endtime="20221024 13:18:06.124"/>
 </test>
-<test id="s1-t3" name="Test Case 44: PUT Update Product with Blank Price" line="20">
+<test id="s1-t3" name="Test Case 54: PATCH Update Product with Blank Price" line="20">
 <kw name="Get Static Product Info &quot;blank_price&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:40.487" level="INFO">${payload} = {'title': 'SomeThing', 'price': '', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.485" endtime="20221024 13:04:40.487"/>
+<msg timestamp="20221024 13:18:06.129" level="INFO">${payload} = {'title': 'SomeThing', 'price': '', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.128" endtime="20221024 13:18:06.129"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.488" level="INFO">${payload} = {'title': 'SomeThing', 'price': '', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.487" endtime="20221024 13:04:40.488"/>
+<msg timestamp="20221024 13:18:06.130" level="INFO">${payload} = {'title': 'SomeThing', 'price': '', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.130" endtime="20221024 13:18:06.130"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.485" endtime="20221024 13:04:40.488"/>
+<status status="PASS" starttime="20221024 13:18:06.128" endtime="20221024 13:18:06.130"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -157,58 +157,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:40.819" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.477" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '141', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "", "description": "Any description you might like", "image": "DoesNotMatter.jpg", "category": "AAAAAAAAAAA"}' 
  </msg>
-<msg timestamp="20221024 13:04:40.819" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.477" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"8c-YaQXhTfIvHJcvJsljHrtmjOPIhk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=PD3aJt5RTVr6yE1HmpGnji68tqQ%2Fc%2BmWmKn%2BxBFE40TYe2eAdU9idwdpXbqNXkHKXBlnWrX%2FfDX9ijsa1%2F4LUURACYSP%2F%2BCNJkhIaJStwZKSe%2BcNZeWrjiRcA1hj4jGy0GnZ"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f37dbf55a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"8c-YaQXhTfIvHJcvJsljHrtmjOPIhk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=CrgbbjL9eMiKBvpWo2S9WUL4VxxL%2FEVAMggv7vIN%2FOzEaYdVQKQr%2FkwY7SX4UECJDo3Odc5CJ0BGt%2BoB6vd4%2BV8rGKt4z9ts6csZfbAyQeChZx0MT%2FybWPA4mrVAZmfQyTcH"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f40729190a011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"SomeThing","price":"","description":"Any description you might like","image":"DoesNotMatter.jpg","category":"AAAAAAAAAAA"} 
  </msg>
-<msg timestamp="20221024 13:04:40.820" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.489" endtime="20221024 13:04:40.820"/>
+<msg timestamp="20221024 13:18:06.478" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.131" endtime="20221024 13:18:06.478"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.821" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.820" endtime="20221024 13:04:40.821"/>
+<msg timestamp="20221024 13:18:06.479" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.478" endtime="20221024 13:18:06.479"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.489" endtime="20221024 13:04:40.821"/>
+<status status="PASS" starttime="20221024 13:18:06.131" endtime="20221024 13:18:06.479"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.823" endtime="20221024 13:04:40.824"/>
+<status status="PASS" starttime="20221024 13:18:06.481" endtime="20221024 13:18:06.483"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:40.825" endtime="20221024 13:04:40.826"/>
+<status status="PASS" starttime="20221024 13:18:06.483" endtime="20221024 13:18:06.485"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.823" endtime="20221024 13:04:40.827"/>
+<status status="PASS" starttime="20221024 13:18:06.481" endtime="20221024 13:18:06.485"/>
 </kw>
-<tag>43</tag>
-<status status="PASS" starttime="20221024 13:04:40.482" endtime="20221024 13:04:40.828"/>
+<tag>54</tag>
+<status status="PASS" starttime="20221024 13:18:06.127" endtime="20221024 13:18:06.486"/>
 </test>
-<test id="s1-t4" name="Test Case 47: PUT Update Product with Blank Description" line="26">
+<test id="s1-t4" name="Test Case 55: PATCH Update Product with Blank Description" line="26">
 <kw name="Get Static Product Info &quot;blank_description&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:40.835" level="INFO">${payload} = {'title': 'SomeThing', 'price': '9999', 'description': '', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.834" endtime="20221024 13:04:40.835"/>
+<msg timestamp="20221024 13:18:06.490" level="INFO">${payload} = {'title': 'SomeThing', 'price': '9999', 'description': '', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.490" endtime="20221024 13:18:06.490"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:40.835" level="INFO">${payload} = {'title': 'SomeThing', 'price': '9999', 'description': '', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:40.835" endtime="20221024 13:04:40.835"/>
+<msg timestamp="20221024 13:18:06.491" level="INFO">${payload} = {'title': 'SomeThing', 'price': '9999', 'description': '', 'image': 'DoesNotMatter.jpg', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.491" endtime="20221024 13:18:06.491"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.833" endtime="20221024 13:04:40.835"/>
+<status status="PASS" starttime="20221024 13:18:06.489" endtime="20221024 13:18:06.491"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -218,58 +218,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:41.181" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.822" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '115', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "9999", "description": "", "image": "DoesNotMatter.jpg", "category": "AAAAAAAAAAA"}' 
  </msg>
-<msg timestamp="20221024 13:04:41.181" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:06.822" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"72-mNn3QegLXBAZ1RA8lKjmLYv2yNg"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=r7QORWrFh8JU3tJekSjAN3Dwem2pBZYeUuiv9ynsYkK5hd15svISBHaNPHvAJDmDJQPFP3L0oiWrDYp6rkM4cOShrhdvdKkavSeTKuc8U71nZPPXIHx8YDsh9%2FogXWzhtAgx"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f37fdab9a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"72-mNn3QegLXBAZ1RA8lKjmLYv2yNg"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=hrTd3jMDr%2Bizl4ZFjNBzrsYrcRc9DsKNjC%2BR4bytezX4%2B0xNv03uQCG1wYbkltpYZBKwPe2Cx6Vv4lPua1YJIdOpDQFDX4xn6iJoFh50NYFMLE2UQXhT8kGaTQmCQNEzX%2FnA"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f4072b4c13011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"SomeThing","price":"9999","description":"","image":"DoesNotMatter.jpg","category":"AAAAAAAAAAA"} 
  </msg>
-<msg timestamp="20221024 13:04:41.181" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:40.836" endtime="20221024 13:04:41.181"/>
+<msg timestamp="20221024 13:18:06.823" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.492" endtime="20221024 13:18:06.823"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.182" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.181" endtime="20221024 13:04:41.182"/>
+<msg timestamp="20221024 13:18:06.823" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.823" endtime="20221024 13:18:06.823"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:40.836" endtime="20221024 13:04:41.182"/>
+<status status="PASS" starttime="20221024 13:18:06.492" endtime="20221024 13:18:06.824"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.183" endtime="20221024 13:04:41.184"/>
+<status status="PASS" starttime="20221024 13:18:06.825" endtime="20221024 13:18:06.827"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.184" endtime="20221024 13:04:41.185"/>
+<status status="PASS" starttime="20221024 13:18:06.827" endtime="20221024 13:18:06.829"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.183" endtime="20221024 13:04:41.185"/>
+<status status="PASS" starttime="20221024 13:18:06.825" endtime="20221024 13:18:06.829"/>
 </kw>
-<tag>44</tag>
-<status status="PASS" starttime="20221024 13:04:40.831" endtime="20221024 13:04:41.185"/>
+<tag>55</tag>
+<status status="PASS" starttime="20221024 13:18:06.488" endtime="20221024 13:18:06.830"/>
 </test>
-<test id="s1-t5" name="Test Case 48: PUT Update Product with Blank Image" line="32">
+<test id="s1-t5" name="Test Case 56: PATCH Update Product with Blank Image" line="32">
 <kw name="Get Static Product Info &quot;blank_image&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:41.188" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': '', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:41.188" endtime="20221024 13:04:41.188"/>
+<msg timestamp="20221024 13:18:06.834" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': '', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.834" endtime="20221024 13:18:06.834"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.189" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': '', 'category': 'AAAAAAAAAAA'}</msg>
-<status status="PASS" starttime="20221024 13:04:41.189" endtime="20221024 13:04:41.189"/>
+<msg timestamp="20221024 13:18:06.835" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': '', 'category': 'AAAAAAAAAAA'}</msg>
+<status status="PASS" starttime="20221024 13:18:06.834" endtime="20221024 13:18:06.835"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.188" endtime="20221024 13:04:41.189"/>
+<status status="PASS" starttime="20221024 13:18:06.832" endtime="20221024 13:18:06.835"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -279,58 +279,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:41.531" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:07.173" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '129', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "99999", "description": "Any description you might like", "image": "", "category": "AAAAAAAAAAA"}' 
  </msg>
-<msg timestamp="20221024 13:04:41.531" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:07.173" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"80-C5KlrJuth8hUoqUaQBlBDVsF5mQ"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=UIAVyAaj0cxtq2FEY9XuisE5Wrjmh0aV%2BpRKJ%2B5FCj98IR94luuur48qMY07UJKJETnSq8%2F%2BA9UR%2BzBuI1ZBC%2B6ZXNdiDZ7tsmx8CqYwLqdP3DqSoWlPVruhN6b%2FH2RoCaVh"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f3821e20a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"80-C5KlrJuth8hUoqUaQBlBDVsF5mQ"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=cwYeMnwkLWJ36fIHYi9S63AOo4mxA6Qys7P9qqQrg38d0RF%2FxBBJncFuFc63HkfIQhgQHIlZOYO9z8W3Loo6VZNYpGCuQ8%2F4Qf4JIMm1Y6Wcb%2FEHV8tLc9dGGxUYUMG5V2Sq"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f4072d6fe1011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"SomeThing","price":"99999","description":"Any description you might like","image":"","category":"AAAAAAAAAAA"} 
  </msg>
-<msg timestamp="20221024 13:04:41.531" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.190" endtime="20221024 13:04:41.531"/>
+<msg timestamp="20221024 13:18:07.173" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:06.836" endtime="20221024 13:18:07.173"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.532" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.532" endtime="20221024 13:04:41.533"/>
+<msg timestamp="20221024 13:18:07.174" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.173" endtime="20221024 13:18:07.174"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.189" endtime="20221024 13:04:41.533"/>
+<status status="PASS" starttime="20221024 13:18:06.835" endtime="20221024 13:18:07.174"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.534" endtime="20221024 13:04:41.536"/>
+<status status="PASS" starttime="20221024 13:18:07.176" endtime="20221024 13:18:07.178"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.536" endtime="20221024 13:04:41.537"/>
+<status status="PASS" starttime="20221024 13:18:07.178" endtime="20221024 13:18:07.180"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.534" endtime="20221024 13:04:41.538"/>
+<status status="PASS" starttime="20221024 13:18:07.176" endtime="20221024 13:18:07.180"/>
 </kw>
-<tag>45</tag>
-<status status="PASS" starttime="20221024 13:04:41.187" endtime="20221024 13:04:41.539"/>
+<tag>56</tag>
+<status status="PASS" starttime="20221024 13:18:06.832" endtime="20221024 13:18:07.181"/>
 </test>
-<test id="s1-t6" name="Test Case 49: PUT Update Product with Blank Category" line="38">
+<test id="s1-t6" name="Test Case 57: PATCH Update Product with Blank Category" line="38">
 <kw name="Get Static Product Info &quot;blank_category&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:41.545" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
-<status status="PASS" starttime="20221024 13:04:41.542" endtime="20221024 13:04:41.545"/>
+<msg timestamp="20221024 13:18:07.186" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
+<status status="PASS" starttime="20221024 13:18:07.185" endtime="20221024 13:18:07.186"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.545" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
-<status status="PASS" starttime="20221024 13:04:41.545" endtime="20221024 13:04:41.545"/>
+<msg timestamp="20221024 13:18:07.187" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
+<status status="PASS" starttime="20221024 13:18:07.187" endtime="20221024 13:18:07.187"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.542" endtime="20221024 13:04:41.546"/>
+<status status="PASS" starttime="20221024 13:18:07.185" endtime="20221024 13:18:07.187"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -340,58 +340,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:41.884" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:07.524" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '135', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "99999", "description": "Any description you might like", "image": "DoesNotMatter.jpg", "category": ""}' 
  </msg>
-<msg timestamp="20221024 13:04:41.884" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:07.524" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"86-2i94Cokwe9UOqWn3KLs3SEfv5Lw"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=tzPaKI2vil9DJ3LZk%2FvfY7iDbwY28QJLdt2vn%2FTyQkl9pF81JQrOFsCXkZq%2BSG6s%2BMGArZQL%2FSOqU4iFBFN2SMgwqjTFl6FNo%2B%2FT0H3QF41RlI%2FFRR7C6nh9%2B8qZVhuORTA4"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f384494aa4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"86-2i94Cokwe9UOqWn3KLs3SEfv5Lw"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=VP0HML50HN1TwXiVdJseFr%2Bi297fz9MCAX6CuslrlIEpAUDGTjRFj2qrr8lO0oo9y2KgRoM2Aug803K1Un1QW%2FjUuHE64uX%2Bg3x8HXxrX48W7td2KzlaiaJmCs8GCxnqyfXU"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f4072f9bf8011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"SomeThing","price":"99999","description":"Any description you might like","image":"DoesNotMatter.jpg","category":""} 
  </msg>
-<msg timestamp="20221024 13:04:41.884" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.547" endtime="20221024 13:04:41.884"/>
+<msg timestamp="20221024 13:18:07.525" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.188" endtime="20221024 13:18:07.525"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.885" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.885" endtime="20221024 13:04:41.885"/>
+<msg timestamp="20221024 13:18:07.526" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.525" endtime="20221024 13:18:07.526"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.546" endtime="20221024 13:04:41.885"/>
+<status status="PASS" starttime="20221024 13:18:07.188" endtime="20221024 13:18:07.526"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.886" endtime="20221024 13:04:41.887"/>
+<status status="PASS" starttime="20221024 13:18:07.528" endtime="20221024 13:18:07.529"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:41.887" endtime="20221024 13:04:41.887"/>
+<status status="PASS" starttime="20221024 13:18:07.529" endtime="20221024 13:18:07.530"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.886" endtime="20221024 13:04:41.887"/>
+<status status="PASS" starttime="20221024 13:18:07.527" endtime="20221024 13:18:07.530"/>
 </kw>
-<tag>46</tag>
-<status status="PASS" starttime="20221024 13:04:41.541" endtime="20221024 13:04:41.888"/>
+<tag>57</tag>
+<status status="PASS" starttime="20221024 13:18:07.184" endtime="20221024 13:18:07.531"/>
 </test>
-<test id="s1-t7" name="Test Case 50: PUT Update Product with Inexistent Id" line="44">
+<test id="s1-t7" name="Test Case 58: PATCH Update Product with Inexistent Id" line="44">
 <kw name="Get Static Product Info &quot;blank_category&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:41.891" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
-<status status="PASS" starttime="20221024 13:04:41.890" endtime="20221024 13:04:41.891"/>
+<msg timestamp="20221024 13:18:07.535" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
+<status status="PASS" starttime="20221024 13:18:07.535" endtime="20221024 13:18:07.535"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:41.891" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
-<status status="PASS" starttime="20221024 13:04:41.891" endtime="20221024 13:04:41.891"/>
+<msg timestamp="20221024 13:18:07.536" level="INFO">${payload} = {'title': 'SomeThing', 'price': '99999', 'description': 'Any description you might like', 'image': 'DoesNotMatter.jpg', 'category': ''}</msg>
+<status status="PASS" starttime="20221024 13:18:07.535" endtime="20221024 13:18:07.536"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.890" endtime="20221024 13:04:41.891"/>
+<status status="PASS" starttime="20221024 13:18:07.534" endtime="20221024 13:18:07.536"/>
 </kw>
 <kw name="PUT endpoint /products Invalid Id" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -401,58 +401,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:42.221" level="INFO">PUT Request : url=https://fakestoreapi.com/products/22 
+<msg timestamp="20221024 13:18:07.874" level="INFO">PUT Request : url=https://fakestoreapi.com/products/22 
  path_url=/products/22 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '135', 'Content-Type': 'application/json'} 
  body=b'{"title": "SomeThing", "price": "99999", "description": "Any description you might like", "image": "DoesNotMatter.jpg", "category": ""}' 
  </msg>
-<msg timestamp="20221024 13:04:42.221" level="INFO">PUT Response : url=https://fakestoreapi.com/products/22 
+<msg timestamp="20221024 13:18:07.874" level="INFO">PUT Response : url=https://fakestoreapi.com/products/22 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"86-/wrdCrn0cjAcweZtkCsNuhN9YOU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=MQt2OQ2warNyk%2FiY3KQHkuId0AHH4CdW6Tc3WHSEJIWMs53rCNiqJqpndqIurzBqslujyScLrqngUFLE%2BqwX3nn4ZFFMk0lOlLk8F%2FXKOaiy2DESmm3cn6JVuAwISF2%2B6ZMV"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f3867c44a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"86-/wrdCrn0cjAcweZtkCsNuhN9YOU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=1S4lj9Uz7W%2FRnY93aCNUwhdds5Q6zQX8PzI4H6nYi0lEYf0wVvQfoK9BpbqO764Oqs8VworXFhiXtawXjpFWlFdNOSHyn3AA14he8Gvn5x9Vlfn13LbvV7lKqar2pdLEJKOA"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f40731cfa3011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":22,"title":"SomeThing","price":"99999","description":"Any description you might like","image":"DoesNotMatter.jpg","category":""} 
  </msg>
-<msg timestamp="20221024 13:04:42.221" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:41.891" endtime="20221024 13:04:42.221"/>
+<msg timestamp="20221024 13:18:07.874" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.537" endtime="20221024 13:18:07.874"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.222" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.222" endtime="20221024 13:04:42.222"/>
+<msg timestamp="20221024 13:18:07.875" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.875" endtime="20221024 13:18:07.875"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:41.891" endtime="20221024 13:04:42.223"/>
+<status status="PASS" starttime="20221024 13:18:07.536" endtime="20221024 13:18:07.876"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.223" endtime="20221024 13:04:42.223"/>
+<status status="PASS" starttime="20221024 13:18:07.877" endtime="20221024 13:18:07.877"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.224" endtime="20221024 13:04:42.225"/>
+<status status="PASS" starttime="20221024 13:18:07.877" endtime="20221024 13:18:07.879"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.223" endtime="20221024 13:04:42.226"/>
+<status status="PASS" starttime="20221024 13:18:07.876" endtime="20221024 13:18:07.879"/>
 </kw>
-<tag>47</tag>
-<status status="PASS" starttime="20221024 13:04:41.889" endtime="20221024 13:04:42.227"/>
+<tag>58</tag>
+<status status="PASS" starttime="20221024 13:18:07.533" endtime="20221024 13:18:07.881"/>
 </test>
-<test id="s1-t8" name="Test Case 51: PUT Update Product Title" line="50">
+<test id="s1-t8" name="Test Case 59: PATCH Update Product Title" line="50">
 <kw name="Get Static Product Info &quot;title_only&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:42.233" level="INFO">${payload} = {'title': 'Another title', 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. D...</msg>
-<status status="PASS" starttime="20221024 13:04:42.232" endtime="20221024 13:04:42.233"/>
+<msg timestamp="20221024 13:18:07.886" level="INFO">${payload} = {'title': 'Another title', 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. D...</msg>
+<status status="PASS" starttime="20221024 13:18:07.885" endtime="20221024 13:18:07.886"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.234" level="INFO">${payload} = {'title': 'Another title', 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. D...</msg>
-<status status="PASS" starttime="20221024 13:04:42.233" endtime="20221024 13:04:42.234"/>
+<msg timestamp="20221024 13:18:07.887" level="INFO">${payload} = {'title': 'Another title', 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. D...</msg>
+<status status="PASS" starttime="20221024 13:18:07.886" endtime="20221024 13:18:07.887"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.232" endtime="20221024 13:04:42.234"/>
+<status status="PASS" starttime="20221024 13:18:07.885" endtime="20221024 13:18:07.887"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -462,58 +462,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:42.576" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.245" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '933', 'Content-Type': 'application/json'} 
  body=b'{"title": "Another title", "price": 56.99, "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates", "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg", "category": "women\'s clothing"}' 
  </msg>
-<msg timestamp="20221024 13:04:42.576" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.245" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a4-mBCYhHJ6B4CpUhNdUQdhKF2ujMk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mJz265WGchhBOsJjPRQoW0HE8McJ0uPaOkEasW%2Bsu21fKfId%2BRTv89%2BXEpuuqDs7Dqme4e6pzqb1x%2BWZXE%2ByddkKW0MwTr2WCeoWsi0flJN009t76cdrfbfwx3oKtaNZEUFc"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f3889f2fa4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a4-mBCYhHJ6B4CpUhNdUQdhKF2ujMk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=fLkmCaC06GVBMXRA63WxeEEh%2BM5tq%2Bxc5OkLG9UMRQX24HPTC4O45Im2Z%2BeKv4Y0%2FR2GXWS%2FqIMLf97JfOjna6e7ZzO9XfepLcVprHg6RyIo2qItwq9mv21vZcEAZ9AezGDy"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f40733fb69011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"Another title","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","category":"women's clothing"} 
  </msg>
-<msg timestamp="20221024 13:04:42.576" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.235" endtime="20221024 13:04:42.576"/>
+<msg timestamp="20221024 13:18:08.245" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:07.888" endtime="20221024 13:18:08.245"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.576" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.576" endtime="20221024 13:04:42.576"/>
+<msg timestamp="20221024 13:18:08.246" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.246" endtime="20221024 13:18:08.246"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.235" endtime="20221024 13:04:42.576"/>
+<status status="PASS" starttime="20221024 13:18:07.887" endtime="20221024 13:18:08.247"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.577" endtime="20221024 13:04:42.578"/>
+<status status="PASS" starttime="20221024 13:18:08.248" endtime="20221024 13:18:08.250"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.578" endtime="20221024 13:04:42.578"/>
+<status status="PASS" starttime="20221024 13:18:08.250" endtime="20221024 13:18:08.252"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.577" endtime="20221024 13:04:42.578"/>
+<status status="PASS" starttime="20221024 13:18:08.248" endtime="20221024 13:18:08.252"/>
 </kw>
-<tag>48</tag>
-<status status="PASS" starttime="20221024 13:04:42.231" endtime="20221024 13:04:42.579"/>
+<tag>59</tag>
+<status status="PASS" starttime="20221024 13:18:07.884" endtime="20221024 13:18:08.253"/>
 </test>
-<test id="s1-t9" name="Test Case 52: PUT Update Product Price" line="56">
+<test id="s1-t9" name="Test Case 60: PATCH Update Product Price" line="56">
 <kw name="Get Static Product Info &quot;price_only&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:42.582" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 1000, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyeste...</msg>
-<status status="PASS" starttime="20221024 13:04:42.582" endtime="20221024 13:04:42.582"/>
+<msg timestamp="20221024 13:18:08.258" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 1000, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyeste...</msg>
+<status status="PASS" starttime="20221024 13:18:08.257" endtime="20221024 13:18:08.258"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.582" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 1000, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyeste...</msg>
-<status status="PASS" starttime="20221024 13:04:42.582" endtime="20221024 13:04:42.582"/>
+<msg timestamp="20221024 13:18:08.259" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 1000, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyeste...</msg>
+<status status="PASS" starttime="20221024 13:18:08.259" endtime="20221024 13:18:08.259"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.581" endtime="20221024 13:04:42.582"/>
+<status status="PASS" starttime="20221024 13:18:08.257" endtime="20221024 13:18:08.259"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -523,58 +523,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:42.915" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.605" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '975', 'Content-Type': 'application/json'} 
  body=b'{"title": "BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats", "price": 1000, "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates", "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg", "category": "women\'s clothing"}' 
  </msg>
-<msg timestamp="20221024 13:04:42.916" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.606" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3ce-riQ58+lMIG9r9MVump33Qw72SVI"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=RrRuGHsdlYWdmFAYAcEyU018eVGwIEAQfNVDZa%2B2%2F9r%2BgHvcXKjQwh25wjIH3thyRB3RturPmHautVTK4Fv0mWHClfWMvWTr2xUoG9MIiTvlrkmoHW1K0YZrLaQnTz7NXm0m"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f38acaa7a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3ce-riQ58+lMIG9r9MVump33Qw72SVI"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=a4YHNrlkBjhU4oVe4HPAoO1k82srPouvuobAFG68G7aPnnXyf0TUt0w7L%2B%2BDAgS2u31W2Zwj0kuXnsZpSDld7jY7M%2Fd9djZGsjnpYZ3WxutUsJ6BfqSEQq%2Btd8LsXQWFZmUd"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f407365f8a011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":1000,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","category":"women's clothing"} 
  </msg>
-<msg timestamp="20221024 13:04:42.916" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.583" endtime="20221024 13:04:42.916"/>
+<msg timestamp="20221024 13:18:08.606" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.261" endtime="20221024 13:18:08.606"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.917" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.916" endtime="20221024 13:04:42.917"/>
+<msg timestamp="20221024 13:18:08.607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.606" endtime="20221024 13:18:08.607"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.583" endtime="20221024 13:04:42.917"/>
+<status status="PASS" starttime="20221024 13:18:08.259" endtime="20221024 13:18:08.607"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.919" endtime="20221024 13:04:42.921"/>
+<status status="PASS" starttime="20221024 13:18:08.611" endtime="20221024 13:18:08.612"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:42.921" endtime="20221024 13:04:42.922"/>
+<status status="PASS" starttime="20221024 13:18:08.612" endtime="20221024 13:18:08.614"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.919" endtime="20221024 13:04:42.922"/>
+<status status="PASS" starttime="20221024 13:18:08.608" endtime="20221024 13:18:08.614"/>
 </kw>
-<tag>49</tag>
-<status status="PASS" starttime="20221024 13:04:42.581" endtime="20221024 13:04:42.924"/>
+<tag>60</tag>
+<status status="PASS" starttime="20221024 13:18:08.255" endtime="20221024 13:18:08.615"/>
 </test>
-<test id="s1-t10" name="Test Case 53: PUT Update Product Description" line="62">
+<test id="s1-t10" name="Test Case 61: PATCH Update Product Description" line="62">
 <kw name="Get Static Product Info &quot;description_only&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:42.928" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'ablubluble', 'image': 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', 'category': "wome...</msg>
-<status status="PASS" starttime="20221024 13:04:42.927" endtime="20221024 13:04:42.928"/>
+<msg timestamp="20221024 13:18:08.618" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'ablubluble', 'image': 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', 'category': "wome...</msg>
+<status status="PASS" starttime="20221024 13:18:08.618" endtime="20221024 13:18:08.618"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:42.928" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'ablubluble', 'image': 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', 'category': "wome...</msg>
-<status status="PASS" starttime="20221024 13:04:42.928" endtime="20221024 13:04:42.928"/>
+<msg timestamp="20221024 13:18:08.619" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'ablubluble', 'image': 'https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg', 'category': "wome...</msg>
+<status status="PASS" starttime="20221024 13:18:08.619" endtime="20221024 13:18:08.619"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.927" endtime="20221024 13:04:42.928"/>
+<status status="PASS" starttime="20221024 13:18:08.617" endtime="20221024 13:18:08.619"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -584,58 +584,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:43.260" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.956" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '214', 'Content-Type': 'application/json'} 
  body=b'{"title": "BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats", "price": 56.99, "description": "ablubluble", "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg", "category": "women\'s clothing"}' 
  </msg>
-<msg timestamp="20221024 13:04:43.260" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:08.957" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"d5-u/T5kVGFrOz5DgOHmC6hN5O1lPQ"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2FFNkhzGq3wAYIv0uhcL7pbbfGQK1fmbRnuaEesiSGXYP2boA9AiA3Hnxi1fQZACgHUFyhLU5jbSzOT0KY40Nh8b%2B5nsb6LUzsm1k0%2BidoSih6w6aRMIZ7PnX8vRuvNVJ4ggC"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f38cfe21a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"d5-u/T5kVGFrOz5DgOHmC6hN5O1lPQ"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=gSCo0eE%2FyMep%2Boxz%2BEVkGMjBQ9gFzXiCrg71NWV1PhM7HIU7e1A4JWGQEB2Fl%2F%2BEVHQZBS73GIML6ux%2BtlP1jsBCr3KqpMK7ENDlr6K70lit4470TjaV%2Ful9QXKTaxnN4ecT"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f407389ae3011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"ablubluble","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","category":"women's clothing"} 
  </msg>
-<msg timestamp="20221024 13:04:43.260" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:42.930" endtime="20221024 13:04:43.260"/>
+<msg timestamp="20221024 13:18:08.957" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.620" endtime="20221024 13:18:08.957"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:43.261" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:43.261" endtime="20221024 13:04:43.262"/>
+<msg timestamp="20221024 13:18:08.958" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.957" endtime="20221024 13:18:08.958"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:42.930" endtime="20221024 13:04:43.262"/>
+<status status="PASS" starttime="20221024 13:18:08.620" endtime="20221024 13:18:08.958"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.263" endtime="20221024 13:04:43.265"/>
+<status status="PASS" starttime="20221024 13:18:08.960" endtime="20221024 13:18:08.961"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.265" endtime="20221024 13:04:43.267"/>
+<status status="PASS" starttime="20221024 13:18:08.961" endtime="20221024 13:18:08.963"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.263" endtime="20221024 13:04:43.268"/>
+<status status="PASS" starttime="20221024 13:18:08.959" endtime="20221024 13:18:08.963"/>
 </kw>
-<tag>50</tag>
-<status status="PASS" starttime="20221024 13:04:42.926" endtime="20221024 13:04:43.268"/>
+<tag>61</tag>
+<status status="PASS" starttime="20221024 13:18:08.617" endtime="20221024 13:18:08.964"/>
 </test>
-<test id="s1-t11" name="Test Case 54: PUT Update Product Image" line="68">
+<test id="s1-t11" name="Test Case 62: PATCH Update Product Image" line="68">
 <kw name="Get Static Product Info &quot;image_only&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:43.274" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
-<status status="PASS" starttime="20221024 13:04:43.273" endtime="20221024 13:04:43.274"/>
+<msg timestamp="20221024 13:18:08.966" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
+<status status="PASS" starttime="20221024 13:18:08.966" endtime="20221024 13:18:08.966"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:43.275" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
-<status status="PASS" starttime="20221024 13:04:43.274" endtime="20221024 13:04:43.275"/>
+<msg timestamp="20221024 13:18:08.967" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
+<status status="PASS" starttime="20221024 13:18:08.966" endtime="20221024 13:18:08.967"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.272" endtime="20221024 13:04:43.275"/>
+<status status="PASS" starttime="20221024 13:18:08.966" endtime="20221024 13:18:08.967"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -645,58 +645,58 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:43.607" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:09.304" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '930', 'Content-Type': 'application/json'} 
  body=b'{"title": "BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats", "price": 56.99, "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates", "image": "photo.jpg", "category": "women\'s clothing"}' 
  </msg>
-<msg timestamp="20221024 13:04:43.607" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:09.304" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:04:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a1-wgPhszVqmPrHzeEo+hHHzqCj6wU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=rDA5A8Gk7uEYwq7K9Vd%2Fa7WlYGjlsQX5ESq87HY5yQGhZcRgu241uIaHVj%2BKgtKkwb6AhD4M7uEDblWcjqqtgISFOiYWkZEZNmEhDCkUsKJ8Mk4sCVQZ1YZq5gbiYYzs3rN0"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f38f2977a4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3a1-wgPhszVqmPrHzeEo+hHHzqCj6wU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=dMuVHaMBvjSDp45G5lZjh6vRR8D94ZjzjzoKOi0HziVctrgYNVZsIgmiElqad8Q56o789pAkKEYg%2FgQXfwq%2FJm9PREyAgVlgylMd5Z6iJtOhk3vg7YTb43LaMGjXYdSEbe2y"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f4073abe39011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","image":"photo.jpg","category":"women's clothing"} 
  </msg>
-<msg timestamp="20221024 13:04:43.607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:43.276" endtime="20221024 13:04:43.607"/>
+<msg timestamp="20221024 13:18:09.305" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:08.968" endtime="20221024 13:18:09.305"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:43.608" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:43.608" endtime="20221024 13:04:43.608"/>
+<msg timestamp="20221024 13:18:09.306" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:09.305" endtime="20221024 13:18:09.306"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.276" endtime="20221024 13:04:43.608"/>
+<status status="PASS" starttime="20221024 13:18:08.968" endtime="20221024 13:18:09.306"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.610" endtime="20221024 13:04:43.610"/>
+<status status="PASS" starttime="20221024 13:18:09.308" endtime="20221024 13:18:09.309"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.610" endtime="20221024 13:04:43.613"/>
+<status status="PASS" starttime="20221024 13:18:09.310" endtime="20221024 13:18:09.311"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.609" endtime="20221024 13:04:43.613"/>
+<status status="PASS" starttime="20221024 13:18:09.307" endtime="20221024 13:18:09.312"/>
 </kw>
-<tag>51</tag>
-<status status="PASS" starttime="20221024 13:04:43.271" endtime="20221024 13:04:43.614"/>
+<tag>62</tag>
+<status status="PASS" starttime="20221024 13:18:08.965" endtime="20221024 13:18:09.313"/>
 </test>
-<test id="s1-t12" name="Test Case 55: PUT Update Product Category" line="74">
+<test id="s1-t12" name="Test Case 63: PATCH Update Product Category" line="74">
 <kw name="Get Static Product Info &quot;category_only&quot;" library="PUT_products_keywords" sourcename="Get Static Product Info &quot;${type}&quot;">
 <kw name="Get Static Product Data" library="python_lib">
 <var>${payload}</var>
 <arg>${type}</arg>
-<msg timestamp="20221024 13:04:43.618" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
-<status status="PASS" starttime="20221024 13:04:43.617" endtime="20221024 13:04:43.618"/>
+<msg timestamp="20221024 13:18:09.319" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
+<status status="PASS" starttime="20221024 13:18:09.318" endtime="20221024 13:18:09.319"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:43.619" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
-<status status="PASS" starttime="20221024 13:04:43.618" endtime="20221024 13:04:43.619"/>
+<msg timestamp="20221024 13:18:09.320" level="INFO">${payload} = {'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyest...</msg>
+<status status="PASS" starttime="20221024 13:18:09.319" endtime="20221024 13:18:09.320"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.616" endtime="20221024 13:04:43.619"/>
+<status status="PASS" starttime="20221024 13:18:09.317" endtime="20221024 13:18:09.320"/>
 </kw>
 <kw name="PUT endpoint /products" library="PUT_products_keywords">
 <kw name="PUT On Session" library="RequestsLibrary">
@@ -706,69 +706,68 @@
 <arg>json=&amp;{payload}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 13:04:43.951" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:10.200" level="INFO">PUT Request : url=https://fakestoreapi.com/products/15 
  path_url=/products/15 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '965', 'Content-Type': 'application/json'} 
  body=b'{"title": "BIYLACLESEN Women\'s 3-in-1 Snowboard Jacket Winter Coats", "price": 56.99, "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates", "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg", "category": "birds"}' 
  </msg>
-<msg timestamp="20221024 13:04:43.952" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
+<msg timestamp="20221024 13:18:10.200" level="INFO">PUT Response : url=https://fakestoreapi.com/products/15 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 16:05:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3c4-tfaMmpPFjbL4e1HJ0q3MnGg2oRY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=uHToqByz%2BGdydBjm2sp3JX5wB8Qv0zzS9TG85eNV6plDV6h4WzgKbEl%2BM3WiNn27SGfugwsH4BMYWx5sfEUGLX%2F%2BLzIa9cEJh%2FNzd1SN1Gqqrus7BpmX5pLJyNmZfQsvdzt4"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f3f3914cdda4e4-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 16:18:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3c4-tfaMmpPFjbL4e1HJ0q3MnGg2oRY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=4AQWJX%2FNywfJKU6%2BMtC8SUPfdAit8cVHmgdnfgS7wARXwUYm5kDg93H46PqtRrEZGTc0db4ZmDvqWz77H2ABVJekWTM3Z%2BmVzjQqqa7B4XZCcx87jSF6y7oj8lCVDgJiuD6t"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f4073cf9ca011b-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body={"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","category":"birds"} 
  </msg>
-<msg timestamp="20221024 13:04:43.952" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:43.620" endtime="20221024 13:04:43.952"/>
+<msg timestamp="20221024 13:18:10.200" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:09.321" endtime="20221024 13:18:10.200"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 13:04:43.953" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 13:04:43.952" endtime="20221024 13:04:43.953"/>
+<msg timestamp="20221024 13:18:10.201" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 13:18:10.201" endtime="20221024 13:18:10.201"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.620" endtime="20221024 13:04:43.953"/>
+<status status="PASS" starttime="20221024 13:18:09.321" endtime="20221024 13:18:10.202"/>
 </kw>
 <kw name="Log Response Info" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.955" endtime="20221024 13:04:43.957"/>
+<status status="PASS" starttime="20221024 13:18:10.203" endtime="20221024 13:18:10.204"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 13:04:43.957" endtime="20221024 13:04:43.958"/>
+<status status="PASS" starttime="20221024 13:18:10.205" endtime="20221024 13:18:10.206"/>
 </kw>
-<status status="PASS" starttime="20221024 13:04:43.955" endtime="20221024 13:04:43.958"/>
+<status status="PASS" starttime="20221024 13:18:10.203" endtime="20221024 13:18:10.206"/>
 </kw>
-<tag>52</tag>
-<status status="PASS" starttime="20221024 13:04:43.616" endtime="20221024 13:04:43.959"/>
+<tag>63</tag>
+<status status="PASS" starttime="20221024 13:18:09.316" endtime="20221024 13:18:10.207"/>
 </test>
 <doc>Tests archive in the endpoint /products</doc>
-<status status="PASS" starttime="20221024 13:04:38.865" endtime="20221024 13:04:43.961"/>
+<status status="PASS" starttime="20221024 13:18:04.489" endtime="20221024 13:18:10.209"/>
 </suite>
 <statistics>
 <total>
 <stat pass="12" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">41</stat>
-<stat pass="1" fail="0" skip="0">42</stat>
-<stat pass="1" fail="0" skip="0">43</stat>
-<stat pass="1" fail="0" skip="0">44</stat>
-<stat pass="1" fail="0" skip="0">45</stat>
-<stat pass="1" fail="0" skip="0">46</stat>
-<stat pass="1" fail="0" skip="0">47</stat>
-<stat pass="1" fail="0" skip="0">48</stat>
-<stat pass="1" fail="0" skip="0">49</stat>
-<stat pass="1" fail="0" skip="0">50</stat>
-<stat pass="1" fail="0" skip="0">51</stat>
-<stat pass="1" fail="0" skip="0">52</stat>
+<stat pass="2" fail="0" skip="0">53</stat>
+<stat pass="1" fail="0" skip="0">54</stat>
+<stat pass="1" fail="0" skip="0">55</stat>
+<stat pass="1" fail="0" skip="0">56</stat>
+<stat pass="1" fail="0" skip="0">57</stat>
+<stat pass="1" fail="0" skip="0">58</stat>
+<stat pass="1" fail="0" skip="0">59</stat>
+<stat pass="1" fail="0" skip="0">60</stat>
+<stat pass="1" fail="0" skip="0">61</stat>
+<stat pass="1" fail="0" skip="0">62</stat>
+<stat pass="1" fail="0" skip="0">63</stat>
 </tag>
 <suite>
-<stat pass="12" fail="0" skip="0" id="s1" name="PUT products tests">PUT products tests</stat>
+<stat pass="12" fail="0" skip="0" id="s1" name="PATCH products tests">PATCH products tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221024 13:04:39.402" level="ERROR">Error in file 'C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\dynamics.robot' on line 3: Resource file 'base.robot' does not exist.</msg>
+<msg timestamp="20221024 13:18:05.009" level="ERROR">Error in file 'C:\Users\emily.lanzarin\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\FakeStore-Tests\support\fixtures\dynamics.robot' on line 3: Resource file 'base.robot' does not exist.</msg>
 </errors>
 </robot>
