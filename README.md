@@ -100,4 +100,4 @@ Until now, this repository only covers test cases for the Login and Products end
 ---
 Emily Suzan Lanzarin
 
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emily-lanzarin-a198bb1bb/)
+[!Linkedin(https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/emily-suzan-lanzarin-a198bb1bb/)
