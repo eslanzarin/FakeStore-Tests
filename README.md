@@ -4,6 +4,24 @@
 
 This repository uses `Robot Framework`, a Python Framework, for automation, due to its advantages regarding its simple sintax and multi-functionality. Some keywords were created in Python and implemented in the tests, imported as a library. 
 
+## About the Repository Organization
+There are 3 main folders:
+* [/keywords](https://github.com/eslanzarin/FakeStore-Tests/tree/develop/keywords) which contains the archives for developmente of keywords separated by endpoint and methods
+* [/support](https://github.com/eslanzarin/FakeStore-Tests/tree/develop/support) which contais folders and archive for general actions and variables used troughout the whole project
+* [/tests](https://github.com/eslanzarin/FakeStore-Tests/tree/develop/tests) which contains the test cases for each endpoint and method. In order to execute the tests, these are the files that need to be executed, following the examples below:
+
+- All the tests from a specific file: 
+```sh
+    robot -d ./reports /tests/{FILE_NAME}.robot
+```
+
+- Individually by tag:
+```sh
+    robot -d ./reports -i {TAG_NAME} /tests/{FILE_NAME}.robot
+```
+
+* The `python_lib.py` file contains functions created to be used as keywords in robot. The keywords are used in the whole project.
+
 ## About the API
 There are 4 endpoints, most used in e-commerce stores:
 
