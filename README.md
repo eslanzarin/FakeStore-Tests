@@ -62,6 +62,8 @@ Until now, this repository only covers test cases for the Login and Products end
 |GET Products from Category Sorting Results with Number|24|Status code: 200, returns all the products in the category by ascending order|
 
 ### POST Method
+| TEST CASE | TAG | RESPONSE |
+|---|---|---|
 |POST Valid Product |25|Status code: 200, returns the created product data|
 |POST Product with Existing Title |26|Status code: 200, returns the created product data|
 |POST Product with Blank Title|27|Status code: 200, returns the created product data|
@@ -80,6 +82,8 @@ Until now, this repository only covers test cases for the Login and Products end
 |POST Product without Category Key|40|Status code: 200, returns the created product data|
 
 ### PUT Method
+| TEST CASE | TAG | RESPONSE |
+|---|---|---|
 |PUT Update All Product Info|41|Status code: 200, returns the updated product data|
 |PUT Update Product with Blank Title|42|Status code: 200, returns the updated product data with blank key|
 
