@@ -101,6 +101,16 @@ Until now, this repository only covers test cases for the Login and Products end
 |---|---|---|
 |PUT Update All Product Info|41|Status code: 200, returns the updated product data|
 |PUT Update Product with Blank Title|42|Status code: 200, returns the updated product data with blank key|
+|PUT Update Product with Blank Price|43|Status code: 200, returns the updated product data with blank key|
+|PUT Update Product with Blank Description|44|Status code: 200, returns the updated product data with blank key|
+|PUT Update Product with Blank Image|45|Status code: 200, returns the updated product data with blank key|
+|PUT Update Product with Blank Category|46|Status code: 200, returns the updated product data with blank key|
+|PUT Update Product with Inexistent Id|47|Status code: 200, returns data of the updated product|
+|PUT Update Product Title|48|Status code: 200, returns data of the updated product|
+|PUT Update Product Price|49|Status code: 200, returns data of the updated product|
+|PUT Update Product Description|50|Status code: 200, returns data of the updated product|
+|PUT Update Product Image|51|Status code: 200, returns data of the updated product|
+|PUT Update Product Category|52|Status code: 200, returns data of the updated product|
 
 ## :shopping_cart: /carts Results
 
